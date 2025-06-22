@@ -1,0 +1,5 @@
+export {default as GuestHeader} from "./GuestHeader"
+export {default as GuestHero} from "./GuestHero"
+export * from "./features-section"
+export * from "./partners-section"
+export * from "./pricing-section"
