@@ -11,7 +11,7 @@ export const searchCities = async (query: string): Promise<City[]> => {
 
   try {
     const response = await fetch(
-      `http://api.geonames.org/searchJSON?q=${query}&maxRows=10&username=${process.env.NEXT_PUBLIC_GEONAMES_USERNAME}&style=FULL&featureClass=P`
+      `https://api.geonames.org/searchJSON?q=${query}&maxRows=10&username=${process.env.NEXT_PUBLIC_GEONAMES_USERNAME}&style=FULL&featureClass=P`
     )
     const data = await response.json()
 
