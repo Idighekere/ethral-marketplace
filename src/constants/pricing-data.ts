@@ -1,7 +1,10 @@
   export interface IPricingPlans {
-id:number;
+id:string;
 name:"Free"|"Pro"|"Premium";
-price:string;
+price:{
+  monthly:number;
+  yearly:number;
+};
 period:string
 description:string;
 badge:string;
@@ -13,9 +16,12 @@ popular:boolean
 
 export const PRICING_PLANS:IPricingPlans[] = [
   {
-    "id": 1,
+    "id":"free",
     "name": "Free",
-    "price": "0",
+    "price": {
+      monthly: 0,
+      yearly: 0,
+    },
     "period": "",
     "description": "Discount on annual billing",
     "badge": "Free for this month",
@@ -24,9 +30,12 @@ export const PRICING_PLANS:IPricingPlans[] = [
     "popular": false,
   },
   {
-    id: 2,
+    id: "pro",
     name: "Pro",
-    price: "199",
+    price: {
+      monthly:199,
+      yearly:179
+    },
     period: "/month",
     description: "$1.910 billed yearly",
     badge: "Free for this month",
@@ -40,9 +49,12 @@ export const PRICING_PLANS:IPricingPlans[] = [
     popular: true,
   },
   {
-    id: 3,
+    id: "premium",
     name: "Premium",
-    price: "266",
+    price: {
+      monthly: 266,
+      yearly: 239,
+    },
     period: "/month",
     description: "$2.55 billed yearly",
     badge: "Free for this month",

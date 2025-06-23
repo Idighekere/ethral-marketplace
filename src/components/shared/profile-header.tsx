@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import { Button } from '../ui/button'
 import { InfluencerActions } from './influencer-actions'
 import { BRAND_DROPDOWN_MENU } from '@/constants'
-import {Cart} from "./cart"
+import { Cart } from './cart'
 import { BrandDropDown } from '../brand'
 const guestNavigationLinks = [
   {
@@ -44,34 +44,45 @@ const brandNavigationLinks = [
 
 interface ProfileHeaderProps {
   isAuthenticated?: boolean
-  influencerUsername?: string
+  username?: string
+  profileType: 'brand' | 'influencer'
 }
 
 export const ProfileHeader = ({
   isAuthenticated = false,
-  influencerUsername = ''
+  username = ''
 }: ProfileHeaderProps) => {
   const pathname = usePathname()
-  const navigationLinks = isAuthenticated ? brandNavigationLinks : guestNavigationLinks
+  const navigationLinks = isAuthenticated
+    ? brandNavigationLinks
+    : guestNavigationLinks
 
   // Desktop header for authenticated users
   const DesktopAuthHeader = () => (
     <div className='hidden md:flex items-center gap-4'>
-      <Button variant='secondary' asChild className="rounded-full">
+      <Button variant='secondary' asChild className='rounded-full'>
         <Link href='/campaigns/new'>Post a campaign</Link>
       </Button>
-                <Cart/>
-   <BrandDropDown menuList={BRAND_DROPDOWN_MENU}/>
+      <Cart />
+      <BrandDropDown menuList={BRAND_DROPDOWN_MENU} />
     </div>
   )
 
   // Desktop header for guests
   const DesktopGuestHeader = () => (
     <div className='hidden md:flex items-center gap-2'>
-      <Button variant='link' asChild className="text-white hover:text-primary px-3">
+      <Button
+        variant='link'
+        asChild
+        className='text-white hover:text-primary px-3'
+      >
         <Link href='/join/creator'>Join as Creator</Link>
       </Button>
-      <Button variant='link' asChild className="text-white hover:text-primary px-3">
+      <Button
+        variant='link'
+        asChild
+        className='text-white hover:text-primary px-3'
+      >
         <Link href='/join/brand'>Join as Brand</Link>
       </Button>
       <Button asChild>
@@ -101,8 +112,8 @@ export const ProfileHeader = ({
               href={link.href}
               className={`transition-colors ${
                 pathname === link.href
-                  ? "text-primary hover:text-primary/80"
-                  : "text-neutral-white hover:text-white"
+                  ? 'text-primary hover:text-primary/80'
+                  : 'text-neutral-white hover:text-white'
               }`}
             >
               {link.label}
@@ -115,10 +126,10 @@ export const ProfileHeader = ({
 
         {/* Mobile Actions */}
         <InfluencerActions
-          influencerId={influencerUsername}
+          influencerId={username}
           isAuthenticated={isAuthenticated}
-          variant="header"
-          className="md:hidden"
+          variant='header'
+          className='md:hidden'
         />
       </nav>
     </header>

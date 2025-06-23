@@ -48,7 +48,7 @@ export default function AccountPage () {
       className='max-w-2xl space-y-6 md:space-y-8 py-4 md:py-6'
     >
       <div className='space-y-4'>
-        <div className='space-y-2'>
+        <div className=' '>
           <Label className='text-sm text-[#e9e9e9]'>Email</Label>
           <Input
             type='email'
@@ -59,7 +59,7 @@ export default function AccountPage () {
           />
         </div>
 
-        <div className='space-y-2'>
+        <div className=' '>
           <Label className='text-sm text-[#e9e9e9]'>Password</Label>
           <Input
             type='password'
@@ -73,7 +73,7 @@ export default function AccountPage () {
           />
         </div>
 
-        <div className='space-y-2'>
+        <div className=' '>
           <Label className='text-sm text-[#e9e9e9]'>Legal Company Name</Label>
           <Input
             value={formData.companyName}
@@ -86,7 +86,7 @@ export default function AccountPage () {
           />
         </div>
 
-        <div className='space-y-2'>
+        <div className=' '>
           <Label className='text-sm text-[#e9e9e9]'>VAT/Tax ID</Label>
           <Input
             value={formData.taxId}
@@ -97,7 +97,7 @@ export default function AccountPage () {
           />
         </div>
 
-        <div className='space-y-2 mt-6'>
+        <div className='  mt-6'>
           <Label className='text-sm text-[#e9e9e9]'>Billing Address</Label>
           <div className='grid gap-4'>
             <Select

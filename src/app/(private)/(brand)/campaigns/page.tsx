@@ -6,6 +6,7 @@ import { FEATURES_DATA } from '@/constants'
 import { PlusCircle } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import React from 'react'
+import Image from "next/image"
 
 const CampaignsPage = () => {
     const router=useRouter()
@@ -16,13 +17,16 @@ const CampaignsPage = () => {
   }
   return (
     <div className="flex flex-col md:flex-row gap-10 md:gap-20">
-        <div className='bg-[#1E242D] p-3 rounded-xl overflow-hidden shadow-2xl'>
-          <img
-            src={'/campaigns-section-image.png'}
-            alt={'ampaign Image'}
-            className='w-full h-auto object-cover'
-            loading='lazy'
-          />
+        <div className='bg-[#1E242D] p-3 rounded-xl overflow-hidden shadow-2xl w-full md:w-1/2 relative'>
+          <div className='relative aspect-square w-full'>
+            <Image
+              src={'/campaigns-section-image.png'}
+              alt={'Campaign Image'}
+              fill
+              className='object-cover'
+              loading='lazy'
+            />
+          </div>
         </div>
 
         <div className='space-y-5'>

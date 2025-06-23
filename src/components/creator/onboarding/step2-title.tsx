@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { StepLayout } from './step-layout'
 import { useCreatorOnboarding } from '@/store/creatorOnboardingContext'
 import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
 
 interface Step2TitleProps {
   onContinue: () => void

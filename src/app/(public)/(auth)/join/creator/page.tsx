@@ -100,9 +100,9 @@ const CreatorSignUpPage = () => {
                   </FormLabel>
                   <div className='flex space-x-2'>
                     <FormControl>
-                      <div className=''>
+                      <div className='relative'>
                         <Input
-                          className='h-10 relative'
+                          className='h-10 relative border-0'
                           placeholder='yourname'
                           {...field}
                           onChange={e => {
@@ -150,7 +150,7 @@ const CreatorSignUpPage = () => {
                 <FormItem>
                   <FormLabel>Full Name</FormLabel>
                   <FormControl>
-                    <Input placeholder='John Doe' {...field} />
+                    <Input className="border-0"  placeholder='John Doe' {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -164,7 +164,7 @@ const CreatorSignUpPage = () => {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder='your@email.com' {...field} />
+                    <Input className="border-0"  placeholder='your@email.com' {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -179,7 +179,7 @@ const CreatorSignUpPage = () => {
                 <FormItem className=''>
                   <FormLabel>Password</FormLabel>
                   <FormControl>
-                    <Input type='password' placeholder='••••••••' {...field} />
+                    <Input className="border-0"  type='password' placeholder='••••••••' {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

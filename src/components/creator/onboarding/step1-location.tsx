@@ -46,7 +46,7 @@ export function Step1Location ({ onContinue }: Step1LocationProps) {
             variant='ghost'
             className='text-primary text-sm hover:bg-transparent hover:text-primary/80'
           >
-            I don't see my city
+            I don&apos;t see my city
           </Button>
         </div>
       </div>

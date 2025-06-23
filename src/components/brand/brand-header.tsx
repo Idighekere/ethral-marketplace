@@ -32,6 +32,15 @@ const navigationLinks = [
 
 const BrandHeader = () => {
   const pathname = usePathname()
+
+  // Regular expression to match paths like /campaigns/new or /campaigns/:id/launch
+  const shouldHide = (path: string) => {
+    const campaignRegex = /^\/campaigns\/(new|[^/]+\/launch)$/;
+    return campaignRegex.test(path);
+  };
+
+  const isHidden = shouldHide(pathname);
+
   return (
     <>
       <header className='sticky top-0 left-0 right-0 z-50 bg-background border-b border-white/10 text-white'>
@@ -47,7 +56,7 @@ const BrandHeader = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className={` items-center gap-8 ${pathname.startsWith("/campaigns/new")?"hidden":"hidden md:flex"}`}>
+          <div className={` items-center gap-8 ${isHidden?"hidden":"hidden md:flex"}`}>
             {navigationLinks.map(link => (
               <Link
                 key={link.href}
@@ -66,7 +75,7 @@ const BrandHeader = () => {
           {/* Desktop Actions */}
           <div className='flex items-center gap-4 '>
 
-            <Button variant='secondary' asChild className={`rounded-full ${pathname.startsWith("/campaigns/new")?"hidden":"hidden md:flex"}  `}>
+            <Button variant='secondary' asChild className={`rounded-full ${isHidden?"hidden":"hidden md:flex"}  `}>
               <Link href='/campaigns/new'>Post a campaign</Link>
             </Button>
 

@@ -1,6 +1,5 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import {
   Select,
@@ -11,32 +10,55 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { useCampaignStore } from '@/store/useCampaignStore'
-import { ArrowLeft } from 'lucide-react'
+import { CampaignStepLayout } from './campaign-step-layout'
+import {useRouter} from "next/navigation"
 
-const CampaignTargeting = () => {
-  const { updateCampaignData, setStep, campaignData } = useCampaignStore()
+interface Props {
+  onContinue: () => void
+  onBack?: () => void
+}
 
+const REGIONS=[
+  { value: 'global', label: 'Global' },
+  { value: 'north-america', label: 'North America' },
+  { value: 'europe', label: 'Europe' },
+  { value: 'asia', label: 'Asia' },
+  { value: 'africa', label: 'Africa' },
+]
+
+const INFLUENCER_COUNT=[
+  { value: '1-5', label: '1-5 Influencers' },
+  { value: '6-10', label: '6-10 Influencers' },
+  { value: '11-20', label: '11-20 Influencers' },
+  { value: '20+', label: '20+ Influencers' },
+]
+const CAMPAIGN_TYPES=[
+  { value: 'influencer', label: 'Influencer Marketing' },
+  { value: 'content', label: 'Content Creation' },
+  { value: 'affiliate', label: 'Affiliate Marketing' },
+]
+
+const NICHES=[
+  { value: 'fashion', label: 'Fashion' },
+  { value: 'beauty', label: 'Beauty' },
+  { value: 'lifestyle', label: 'Lifestyle' },
+  { value: 'tech', label: 'Technology' },
+  { value: 'gaming', label: 'Gaming' },
+]
+const CampaignTargeting = ({onContinue}:Props) => {
+  const { updateCampaignData,  campaignData } = useCampaignStore()
+
+  const router=useRouter()
   const handleNext = () => {
-    setStep(2)
+
+    onContinue()
   }
 
+  const handleGoBack=()=>{
+    router.back()
+  }
   return (
-    <div className=''>
-      <Button
-        variant='outline'
-        className='mb-8 flex items-center gap-2'
-        onClick={() => window.history.back()}
-      >
-        <ArrowLeft className='h-4 w-4' />
-        <span className='hidden md:inline'>Back</span>
-      </Button>
-
-      <div className='mb-8'>
-        <div className='h-2 w-full rounded-full bg-gray-200'>
-          <div className='h-2 w-1/2 rounded-full bg-primary'></div>
-        </div>
-      </div>
-
+    <CampaignStepLayout currentStep={1} totalSteps={3} onContinue={handleNext} onBack={handleGoBack} showBackButton={true} title="Let&apos;s see your targeting details.">
       <form className='space-y-6'>
         <div>
           <Label>What type of campaign do you want?</Label>
@@ -44,14 +66,16 @@ const CampaignTargeting = () => {
         value={campaignData.campaignType}
         onValueChange={value => updateCampaignData({ campaignType: value })}
           >
-        <SelectTrigger>
+        <SelectTrigger className="border-[#CDCDCD] border text-white" >
           <SelectValue placeholder='Select campaign type' />
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
-            <SelectItem value='influencer'>Influencer Marketing</SelectItem>
-            <SelectItem value='content'>Content Creation</SelectItem>
-            <SelectItem value='affiliate'>Affiliate Marketing</SelectItem>
+          {CAMPAIGN_TYPES.map(type => (
+            <SelectItem key={type.value} value={type.value}>
+              {type.label}
+            </SelectItem>
+          ))}
           </SelectGroup>
         </SelectContent>
           </Select>
@@ -63,15 +87,16 @@ const CampaignTargeting = () => {
         value={campaignData.influencerCount}
         onValueChange={value => updateCampaignData({ influencerCount: value })}
           >
-        <SelectTrigger>
+        <SelectTrigger className="border-[#CDCDCD] border text-white" >
           <SelectValue placeholder='Select number of influencers' />
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
-            <SelectItem value='1-5'>1-5 Influencers</SelectItem>
-            <SelectItem value='6-10'>6-10 Influencers</SelectItem>
-            <SelectItem value='11-20'>11-20 Influencers</SelectItem>
-            <SelectItem value='20+'>20+ Influencers</SelectItem>
+            {INFLUENCER_COUNT.map(count => (
+              <SelectItem key={count.value} value={count.value}>
+                {count.label}
+              </SelectItem>
+            ))}
           </SelectGroup>
         </SelectContent>
           </Select>
@@ -83,16 +108,16 @@ const CampaignTargeting = () => {
         value={campaignData.targetNiches?.[0]}
         onValueChange={value => updateCampaignData({ targetNiches: [value] })}
           >
-        <SelectTrigger>
+        <SelectTrigger className="border-[#CDCDCD] border text-white" >
           <SelectValue placeholder='Select target niche' />
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
-            <SelectItem value='fashion'>Fashion</SelectItem>
-            <SelectItem value='beauty'>Beauty</SelectItem>
-            <SelectItem value='lifestyle'>Lifestyle</SelectItem>
-            <SelectItem value='tech'>Technology</SelectItem>
-            <SelectItem value='gaming'>Gaming</SelectItem>
+        {NICHES.map(niche => (
+            <SelectItem key={niche.value} value={niche.value}>
+              {niche.label}
+            </SelectItem>
+          ))}
           </SelectGroup>
         </SelectContent>
           </Select>
@@ -104,26 +129,23 @@ const CampaignTargeting = () => {
         value={campaignData.targetRegions?.[0]}
         onValueChange={value => updateCampaignData({ targetRegions: [value] })}
           >
-        <SelectTrigger>
+        <SelectTrigger className="border-[#CDCDCD] border text-white" >
           <SelectValue placeholder='Select target region' />
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
-            <SelectItem value='global'>Global</SelectItem>
-            <SelectItem value='north-america'>North America</SelectItem>
-            <SelectItem value='europe'>Europe</SelectItem>
-            <SelectItem value='asia'>Asia</SelectItem>
-            <SelectItem value='africa'>Africa</SelectItem>
+           {REGIONS.map(region => (
+            <SelectItem key={region.value} value={region.value}>
+              {region.label}
+            </SelectItem>
+          ))}
           </SelectGroup>
         </SelectContent>
           </Select>
         </div>
 
-        <Button type='button' className='w-full' onClick={handleNext}>
-          Proceed <ArrowLeft className='ml-2 h-4 w-4 rotate-180' />
-        </Button>
       </form>
-    </div>
+   </CampaignStepLayout>
   )
 }
 

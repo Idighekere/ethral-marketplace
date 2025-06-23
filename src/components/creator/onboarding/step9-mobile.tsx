@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { StepLayout } from './step-layout'
 import { useCreatorOnboarding } from '@/store/creatorOnboardingContext'
 import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
 import {
   Select,
   SelectContent,
@@ -33,7 +32,7 @@ const countryCodes = [
 ]
 
 export function Step9Mobile ({ onContinue, onBack }: Step9MobileProps) {
-  const { state, updatePhoneNumber } = useCreatorOnboarding()
+  const {  updatePhoneNumber } = useCreatorOnboarding()
   const [error, setError] = useState<string | null>(null)
   const [countryCode, setCountryCode] = useState('+1')
   const [phoneNumber, setPhoneNumber] = useState('')
@@ -101,7 +100,7 @@ export function Step9Mobile ({ onContinue, onBack }: Step9MobileProps) {
         </div>
 
         <p className='text-sm text-gray-400'>
-          We'll send you a verification code to confirm your number. Standard
+          We&apos;ll send you a verification code to confirm your number. Standard
           message rates may apply.
         </p>
       </div>

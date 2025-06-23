@@ -1,5 +1,6 @@
 import { FeaturePoint } from "./feature-point"
 import type { Feature } from "@/types"
+import Image from "next/image"
 
 interface FeatureItemProps {
   feature: Feature
@@ -10,7 +11,7 @@ export function FeatureItem({ feature, index }: FeatureItemProps) {
   const isEven = index % 2 === 0
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
       {/* Content */}
       <div className={`space-y-6 ${isEven ? "lg:order-1" : "lg:order-2"}`}>
       <p className="capitalize bg-[#1E242D] px-4 rounded-full py-1 w-30 flex justify-center ">{feature.id}</p>
@@ -30,13 +31,16 @@ export function FeatureItem({ feature, index }: FeatureItemProps) {
       <div className={`${isEven ? "lg:order-2" : "lg:order-1"}`}>
         <div className="relative">
           <div className=" rounded-2xl p-1">
-            <div className="bg-[#1E242D] p-3 rounded-xl overflow-hidden shadow-2xl">
-              <img
-                src={feature.image || "/placeholder.svg"}
+            <div className="bg-[#1E242D] p-3 rounded-xl overflow-hidden shadow-2xl w-full md:w-1/2 relative">
+            <div className="relative w-full aspect-square">
+              <Image
+                src={feature.image }
                 alt={feature.imageAlt}
                 className="w-full h-auto object-cover"
+                fill
                 loading="lazy"
               />
+              </div>
             </div>
           </div>
 

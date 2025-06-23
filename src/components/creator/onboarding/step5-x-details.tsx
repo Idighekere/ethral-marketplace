@@ -68,7 +68,7 @@ export function Step5XDetails ({ onContinue, onBack }: Step5XDetailsProps) {
           <Select
             value={state.followerRange || ''}
             onValueChange={value => {
-              updateFollowerRange(value as any)
+              updateFollowerRange(value)
               setError(null)
             }}
           >

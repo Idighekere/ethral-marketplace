@@ -14,7 +14,7 @@ import {
 } from '@/components/ui/select'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
+import { Card, CardContent,  CardHeader } from '@/components/ui/card'
 import { PlusIcon, TrashIcon } from 'lucide-react'
 
 interface Step8PackagesProps {

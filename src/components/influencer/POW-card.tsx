@@ -1,19 +1,24 @@
+import Image from "next/image"
+import { Play } from "../icons"
+
 interface Props {
   pow: string
 }
 export const POWCard = ({ pow }: Props) => {
   return (
     <div className=''>
-      <div className='relative'>
+      <div className='relative aspect-9/16  rounded-lg '>
         {/* <iframe src={pow}/> */}
-        <img
+        <Image
           src={pow}
           alt='POW Asset'
-          className='w-full h-auto rounded-lg shadow-lg'
+          fill
+          className='
+          rounded-lg shadow-lg object-cover'
         />
 
         <button className='absolute bottom-4 left-4 z-40'>
-          <img src='/play.svg' alt='Play Icon' />
+          <Play />
         </button>
       </div>
     </div>

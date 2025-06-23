@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { StepLayout } from './step-layout'
 import { useCreatorOnboarding } from '@/store/creatorOnboardingContext'
 import { Textarea } from '@/components/ui/textarea'
-import { Label } from '@/components/ui/label'
+
 
 interface Step3DescriptionProps {
   onContinue: () => void

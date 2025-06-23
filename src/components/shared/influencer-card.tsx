@@ -5,10 +5,12 @@ import Image from 'next/image'
 import {useRouter} from "next/navigation"
 import { Card } from '@/components/ui/card'
 
-import { Star, Crown, Zap  } from 'lucide-react'
+import { Star } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
+import {Flash, Award} from "@/components/icons"
 import { formatFollowers, formatPrice } from '@/utils'
+
 export interface InfluencerCardProps {
   id: string
   name: string
@@ -28,11 +30,11 @@ export interface InfluencerCardProps {
 
 const badgeConfig = {
   'top-creator': {
-    icon: Crown,
+    icon: Award,
     className: ''
   },
   'responds-fast': {
-    icon: Zap,
+    icon: Flash,
     className: ''
   }
 }

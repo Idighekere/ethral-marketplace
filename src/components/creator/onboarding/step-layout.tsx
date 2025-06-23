@@ -2,7 +2,6 @@
 
 import { ChevronLeftArrow, Eye } from '@/components/icons'
 import { Button } from '@/components/ui/button'
-import { useRouter } from 'next/navigation'
 import { ReactNode } from 'react'
 
 interface StepLayoutProps {
