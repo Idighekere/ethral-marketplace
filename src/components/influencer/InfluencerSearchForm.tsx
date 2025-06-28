@@ -51,7 +51,7 @@ const InfluencerSearchForm=({  className = "",  }: SearchFormProps)=> {
     <div className={`w-full max-w-4xl  ${className}`}>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <div
-          className={`flex flex-col sm:flex-row gap-4 sm:rounded-full p-2 sm:px-10  transition-all duration-200 bg-[#1D232C] ${
+          className={`flex flex-col sm:flex-row gap-4 rounded-sm sm:rounded-full p-2 sm:px-10  transition-all duration-200 bg-[#1D232C] ${
             Object.keys(errors).length > 0 ? "ring-1 ring-red-200/20" : "hover:shadow-xl "
           }`}
         >

@@ -8,7 +8,7 @@ export default function BrandLayout({
   return (
     <>
       <BrandHeader />
-      <main className="mx-auto p-5 pb-20 sm:p-10 lg:p-16 ">
+      <main className="mx-auto p-5 pb-20 sm:p-10 lg:p-20 xl:p-36">
         {children}
       </main>
     </>

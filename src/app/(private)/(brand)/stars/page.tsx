@@ -12,8 +12,8 @@ export const metadata = generateMetadata(STARS_SEO)
 const StarsPage = () => {
   return (
     <>
-      <div className=' mx-auto p-5 sm:p-10 lg:p-20 xl:px-36  text-neutral-white'>
-        <div className='flex flex-col justify-center text-center mb-20 items-center max-w-2xl mx-auto'>
+      <div className=' mx-auto   text-neutral-white'>
+        <div className='flex flex-col justify-center text-center mb-20 items-center max-w-4xl mx-auto'>
           <InfluencerSearchForm />
         </div>
 

@@ -123,7 +123,7 @@ export const BlogDetails: React.FC<BlogDetailsProps> = ({ post }) => {
   return (
     <div className="text-white ">
       {/* Hero Section */}
-      <section className="relative flex items-center justify-center px-5 sm:px-10 lg:px-20 xl:px-36">
+      <section className="relative flex items-center justify-center ">
 
 
         {/* Content */}
@@ -145,7 +145,7 @@ export const BlogDetails: React.FC<BlogDetailsProps> = ({ post }) => {
       </section>
 
       {/* Article Content */}
-      <section className="px-5 sm:px-10 lg:px-20 xl:px-36 pb-20 relative">
+      <section className=" pb-20 relative">
 
         {/* Background Image */}
         <div className="relative w-full h-64 md:h-96 aspect-auto overflow-hidden rounded-lg mt-8">
@@ -153,7 +153,7 @@ export const BlogDetails: React.FC<BlogDetailsProps> = ({ post }) => {
             src={post.thumbnail}
             alt={post.title}
             fill
-            className="object-cover opacity-30"
+            className="object-cover"
           />
 
         </div>
