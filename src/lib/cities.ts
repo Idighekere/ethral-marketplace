@@ -10,9 +10,14 @@ export const searchCities = async (query: string): Promise<City[]> => {
   if (query.length < 3) return []
 
   try {
-    const response = await fetch(
-      `http://api.geonames.org/searchJSON?q=${query}&maxRows=10&username=${process.env.NEXT_PUBLIC_GEONAMES_USERNAME}&style=FULL&featureClass=P`
-    )
+    const apiUrl = `http://api.geonames.org/searchJSON?q=${query}&maxRows=10&username=${process.env.NEXT_PUBLIC_GEONAMES_USERNAME}&style=FULL&featureClass=P`
+
+    // Use a relative URL to your own backend proxy endpoint
+    const corsProxyUrl = process.env.NODE_ENV === 'production'
+      ? `/api/proxy?url=${encodeURIComponent(apiUrl)}`
+      : apiUrl
+
+    const response = await fetch(corsProxyUrl)
     const data = await response.json()
 
     return data.geonames.map((city) => ({
