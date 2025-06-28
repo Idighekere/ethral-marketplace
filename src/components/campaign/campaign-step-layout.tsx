@@ -109,7 +109,7 @@ export function StepProgressBar ({
 
   const onStepClick = (step: number) => {
     // Navigate to the step URL or perform any action
-    router.push(`/campaigns/${params.id}t=/${step}`)
+    router.push(`/campaigns/${params.id}/launch?t=${step}`)
   }
   // Calculate total visible steps (excluding the skip step)
   // const visibleSteps = skipStep ? totalSteps - 1 : totalSteps
