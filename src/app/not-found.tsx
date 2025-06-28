@@ -17,7 +17,7 @@ export default function Custom404 () {
           Page Not Found
         </h2>
         <p className='text-gray-300 max-w-md mx-auto mb-8'>
-          The page you're looking for doesn't exist or has been moved.
+          The page you&apos;re looking for doesn&apos;t exist or has been moved.
         </p>
       </div>
 

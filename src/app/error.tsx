@@ -29,7 +29,7 @@ export default function Error ({
           Something went wrong
         </h2>
         <p className='text-gray-300 max-w-md mx-auto mb-8'>
-          We're sorry, but something went wrong on our end. Please try again or
+          We&apos;re sorry, but something went wrong on our end. Please try again or
           return home.
         </p>
       </div>

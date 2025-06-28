@@ -10,6 +10,7 @@ export default function GlobalError ({
   error: Error & { digest?: string }
   reset: () => void
 }) {
+    console.error(error)
   return (
     <html>
       <body>
@@ -22,7 +23,7 @@ export default function GlobalError ({
               Something went wrong
             </h2>
             <p className='text-gray-300 max-w-md mx-auto mb-8'>
-              A critical error has occurred. We're working to fix the issue.
+              A critical error has occurred. We&apos;re working to fix the issue.
             </p>
           </div>
 
