@@ -46,6 +46,7 @@ export const PricingCard = ({plan,billingCycle="monthly",page="",ctaButton}:Pric
       ))}
     </div>
 
+  </div>
     <Button
       className='w-full font-medium bg-primary text-base mt-auto'
       size='lg'
@@ -54,7 +55,6 @@ export const PricingCard = ({plan,billingCycle="monthly",page="",ctaButton}:Pric
     >
       {plan.buttonText}
     </Button>
-  </div>
 </div>
 
   )
