@@ -13,7 +13,7 @@ interface PricingCardProps{
 export const PricingCard = ({plan,billingCycle="monthly",page="",ctaButton}:PricingCardProps) => {
   return (
 
-   <div key={plan.id} className='relative h-full'>
+   <div key={plan.id} className='relative h-full bg-[#1D232C] rounded-lg p-6 h-full'>
   {/* Badge */}
   <div className='absolute -top-3 right-0 transform rotate-6  '>
     <span className='bg-[#FEF3C7] text-[#92400E] text-xs font-medium px-3 py-1 rounded-full'>
@@ -22,7 +22,7 @@ export const PricingCard = ({plan,billingCycle="monthly",page="",ctaButton}:Pric
   </div>
 
   {/* Card */}
-  <div className='bg-[#1D232C] rounded-lg p-6 h-full '>
+  <div className=' '>
     <div className=' mb-6'>
       <h3 className='text-white text-lg mb-4 border-b inline'>{plan.name}</h3>
       <div className='flex items-baseline  gap-1 border-b border-white/60  py-2'>
