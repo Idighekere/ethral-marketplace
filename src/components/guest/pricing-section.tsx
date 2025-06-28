@@ -25,7 +25,7 @@ export const PricingSection = () => {
         ))}
       </div>
 
-      <div className='bg-secondary p-4 md:p-6 flex flex-col sm:flex-row sm:justify-between sm:items-center my-6'>
+      <div className='bg-secondary p-4 md:p-6 flex flex-col sm:flex-row sm:justify-between sm:items-center my-6 rounded-md'>
         <div className='flex flex-col gap-2'>
           <h3 className="text-xl sm:text-2xl font-medium text-white">Still on the Fence? Book a Demo</h3>
           <p className="text-white/80"> Interested in our monthly plans? Speak to an expert</p>
