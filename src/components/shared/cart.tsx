@@ -66,7 +66,7 @@ export const Cart = ({ iconClassName = '', cartOpen = false }: Props) => {
         </Button>
       </SheetTrigger>      <SheetContent
         side='right'
-        className='w-full md:max-w-3xl lg:max-w-4xl text-neutral-white border-none overflow-y-auto p-4 sm:px-10 lg:px-12 h-full'
+        className='w-full md:max-w-3xl  lg:max-w-4xl  text-neutral-white border-none overflow-y-auto p-4 sm:px-10 lg:px-12 h-full'
       >
         <SheetHeader className='p-0 sticky'>
           <SheetTitle className='text-primary font-medium '>
@@ -194,7 +194,7 @@ const EmptyCart = () => {
       <div className="space-y-5 flex flex-col items-center justify-center text-center h-full w-full">
 
       <ShoppingCart className='size-14 lg:size-30 font-medium' />
-      <h3 className='font-semibold text-xl md:text-2xl '>Your Cart is Empty</h3>
+      <h3 className='font-semibold text-xl  md:text-2xl  '>Your Cart is Empty</h3>
       <p className='text-center'>
         Start adding influencers by clicking the button below
       </p>

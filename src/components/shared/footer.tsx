@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { LinkedIn, XTwitter } from '../icons'
 
 const DISCOVER_LINKS = [
   {
@@ -57,17 +58,17 @@ const CONTACT_LINKS = [
   {
     text: 'LinkedIn',
     link: '/top-influencers',
-    icon: '/linkedin.svg'
+    icon: LinkedIn
   },
   {
     text: 'X/Twitter',
     link: '/search-influencers',
-    icon: '/twitter.svg'
+    icon:XTwitter
   }
 ]
 const Footer = () => {
   return (
-    <footer className='text-white  px-5 md:px-10 lg:px-16 flex flex-col md:flex-row space-y-3 md:gap-10 '>
+    <footer className='text-white  px-5 md:px-10 lg:px-20 xl:px-36 flex flex-col md:flex-row space-y-3 md:gap-10 mt-12 justify-center items-center'>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 border-t border-neutral-white/20 py-10'>
         <div className='flex flex-col '>
           <Link href='/' className='relative w-32 h-8'>
@@ -87,7 +88,7 @@ const Footer = () => {
           <ul>
             {DISCOVER_LINKS.map(link => (
               <li key={link.text}>
-                <a href={link.link} className='text-gray-400 hover:text-white'>
+                <a href={link.link} className='text-white/90 hover:text-white'>
                   {link.text}
                 </a>
               </li>
@@ -99,7 +100,7 @@ const Footer = () => {
           <ul>
             {SUPPORT_LINKS.map(link => (
               <li key={link.text}>
-                <a href={link.link} className='text-gray-400 hover:text-white'>
+                <a href={link.link} className='text-white/90 hover:text-white'>
                   {link.text}
                 </a>
               </li>
@@ -111,7 +112,7 @@ const Footer = () => {
           <ul>
             {RESOURCES_LINK.map(link => (
               <li key={link.text}>
-                <a href={link.link} className='text-gray-400 hover:text-white'>
+                <a href={link.link} className='text-white/90 hover:text-white'>
                   {link.text}
                 </a>
               </li>
@@ -121,19 +122,16 @@ const Footer = () => {
 
         <div>
           <h3 className='text-lg font-semibold mb-2 text-primary'>Contact</h3>
-          <ul>
+          <Link href="mailto:contact@ethral.com">contact@thral.com</Link>
+          <ul className="flex gap-2">
             {CONTACT_LINKS.map(link => (
               <li key={link.text}>
                 <Link
                   href={link.link}
                   className='text-gray-400 hover:text-white relative w-6 h-6'
                 >
-                  <Image
-                    src={link.icon}
-                    alt={link.text}
-                    fill
-                    className='object-contain'
-                  />
+
+                  <link.icon className='size-5'/>
                 </Link>
               </li>
             ))}

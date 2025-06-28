@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { Search, AlertCircle } from "lucide-react"
 import { influencerSearchFormSchema, type InfluencerSearchFormData } from "@/schemas"
 import { useSearchStore } from "@/store/"
-
+import {Label} from "../ui/label"
 interface SearchFormProps {
 
   className?: string
@@ -48,27 +48,27 @@ const InfluencerSearchForm=({  className = "",  }: SearchFormProps)=> {
   const isFormLoading = isLoading || isSubmitting
 
   return (
-    <div className={`w-full max-w-4xl ${className}`}>
+    <div className={`w-full max-w-4xl  ${className}`}>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <div
-          className={`flex flex-col sm:flex-row gap-4 rounded-lg p-2 shadow-lg transition-all duration-200 ${
-            Object.keys(errors).length > 0 ? "ring-2 ring-red-200" : "hover:shadow-xl"
+          className={`flex flex-col sm:flex-row gap-4 sm:rounded-full p-2 sm:px-10  transition-all duration-200 bg-[#1D232C] ${
+            Object.keys(errors).length > 0 ? "ring-1 ring-red-200/20" : "hover:shadow-xl "
           }`}
         >
           {/* Influencers Input */}
           <div className="flex-1">
-            <label htmlFor="influencers" className="block text-base font-medium text-white mb-1 px-3">
+            <Label htmlFor="influencers" className="block text-base font-medium text-white mb-0 py-0 px-3">
               Influencers
-            </label>
+            </Label>
             <input
               id="influencers"
               type="text"
               {...register("influencers")}
               placeholder="search influencers"
-              className={`w-full px-3 py-2 text-gray-700 placeholder-gray-400 border-0 focus:outline-none focus:ring-0 transition-colors ${
+              className={`w-full px-3 py-2 text-white placeholder:text-[#D8D8D8] border-0 focus:outline-none focus:ring-0 transition-colors ${
                 hasError("influencers") ? "text-red-600 placeholder-red-300" : ""
               }`}
-              aria-invalid={hasError("influencers")}
+              aria-invalid={hasError("influencers") ? "true" : "false"}
               aria-describedby={hasError("influencers") ? "influencers-error" : undefined}
             />
           </div>
@@ -78,18 +78,18 @@ const InfluencerSearchForm=({  className = "",  }: SearchFormProps)=> {
 
           {/* Category Input */}
           <div className="flex-1">
-            <label htmlFor="category" className="block text-base font-medium text-white mb-1 px-3">
+            <Label htmlFor="category" className="block text-base font-medium text-white mb-0 py-0 px-3">
               Category
-            </label>
+            </Label>
             <input
               id="category"
               type="text"
               {...register("category")}
               placeholder="Enter keywords, niches or categories"
-              className={`w-full px-3 py-2 text-white  placeholder-gray-400 border-0 focus:outline-none focus:ring-0 transition-colors ${
+              className={`w-full px-3 py-2 text-white  placeholder:text-[#D8D8D8] border-0 focus:outline-none focus:ring-0 transition-colors ${
                 hasError("category") ? "text-red-600 placeholder-red-300" : ""
               }`}
-              aria-invalid={hasError("category")}
+              aria-invalid={hasError("category") ? "true" : "false"}
               aria-describedby={hasError("category") ? "category-error" : undefined}
             />
           </div>
@@ -98,13 +98,13 @@ const InfluencerSearchForm=({  className = "",  }: SearchFormProps)=> {
           <button
             type="submit"
             disabled={isFormLoading}
-            className="bg-[#2F353E]  disabled:opacity-50 disabled:cursor-not-allowed text-white p-3 rounded-md transition-all duration-200 flex items-center justify-center min-w-[48px] hover:scale-105 active:scale-95"
+            className="bg-[#2F353E]  disabled:opacity-50 disabled:cursor-not-allowed text-white p-3 rounded-md sm:rounded-full transition-all duration-200 flex items-center justify-center sm:h-15 sm:w-15  hover:scale-105 active:scale-95 sm:self-center "
             aria-label="Search"
           >
             {isFormLoading ? (
               <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
             ) : (
-              <Search className="w-5 h-5" />
+              <Search className="size-6 " />
             )}
           </button>
         </div>

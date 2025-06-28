@@ -30,7 +30,7 @@ export function StepLayout ({
   continueButtonText = 'Continue'
 }: StepLayoutProps) {
   return (
-    <div className='w-full max-w-3xl mx-auto py-8 px-4'>
+    <div className='w-full max-w-3xl  mx-auto py-8 px-4'>
       {/* Progress Bar */}
       <div className='w-full mb-8'>
         <div className='flex justify-between mb-2'>

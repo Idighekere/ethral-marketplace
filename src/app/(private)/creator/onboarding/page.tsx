@@ -3,7 +3,7 @@ import OnboardingClientPage from './onboarding-client'
 
 export default function CreatorOnboardingPage() {
   return (
-    <Suspense fallback={<div className="text-white text-center p-10">Loading steps...</div>}>
+   <Suspense fallback={<div className="text-white text-center p-10">Loading...</div>}>
       <OnboardingClientPage />
     </Suspense>
   )

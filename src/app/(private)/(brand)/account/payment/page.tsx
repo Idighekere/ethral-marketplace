@@ -9,7 +9,7 @@ export default function PaymentPage () {
   const balance = 7500
 
   return (
-    <div className='max-w-2xl space-y-8 py-6'>
+    <div className='max-w-2xl  space-y-8 py-6'>
       <div className=' space-y-4 bg-transparent'>
         <div className='flex items-center gap-2'>
           <h2 className='text-lg font-medium text-white'>Subscription</h2>

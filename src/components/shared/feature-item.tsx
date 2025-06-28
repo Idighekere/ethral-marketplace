@@ -16,7 +16,7 @@ export function FeatureItem({ feature, index }: FeatureItemProps) {
       <div className={`space-y-6 ${isEven ? "lg:order-1" : "lg:order-2"}`}>
       <p className="capitalize bg-[#1E242D] px-4 rounded-full py-1 w-30 flex justify-center ">{feature.id}</p>
         <div className="space-y-4">
-          <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight">{feature.title}</h3>
+          <h3 className="text-xl md:text-2xl text-white leading-tight font-semibold">{feature.title}</h3>
           <p className="text-gray-300 text-base md:text-lg leading-relaxed">{feature.description}</p>
         </div>
 
@@ -28,20 +28,19 @@ export function FeatureItem({ feature, index }: FeatureItemProps) {
       </div>
 
       {/* Image */}
-      <div className={`${isEven ? "lg:order-2" : "lg:order-1"}`}>
-        <div className="relative">
-          <div className=" rounded-2xl p-1">
-            <div className="bg-[#1E242D] p-3 rounded-xl overflow-hidden shadow-2xl w-full md:w-1/2 relative">
-            <div className="relative w-full aspect-square">
+      <div className={`${isEven ? "md:order-2" : "md:order-1"}`}>
+
+            <div className="bg-[#1E242D] p-3 rounded-md overflow-hidden shadow-2xl w-full  relative rounded-2xl  ">
+            <div className="relative w-full aspect-square  ">
               <Image
                 src={feature.image }
                 alt={feature.imageAlt}
-                className="w-full h-auto object-cover"
+                className="object-cover"
                 fill
                 loading="lazy"
               />
-              </div>
-            </div>
+
+
           </div>
 
         </div>

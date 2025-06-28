@@ -3,6 +3,7 @@ import { InfluencerCardProps } from '@/components/shared';
 export const sampleInfluencers: InfluencerCardProps[] = [
   {
     id: '1',
+    username:"1",
     name: 'Mfoniso Ibokette',
     title: 'Micro-Influencer / Ugc Creator',
     image: '/creator-1.png',
@@ -14,7 +15,8 @@ export const sampleInfluencers: InfluencerCardProps[] = [
     ]
   },
   {
-    id: '2',
+    id: '4',
+    username:"4",
     name: 'Mfoniso Ibokette',
     title: 'Micro-Influencer / Ugc Creator',
     image: '/creator-2.png',
@@ -28,6 +30,7 @@ export const sampleInfluencers: InfluencerCardProps[] = [
   },
   {
     id: '3',
+    username:"3",
     name: 'Mfoniso Iboketteetrtrtrtrtrtrtrtrtrtrt',
     title: 'Micro-Influencer / Ugc Creator',
     image: '/creator-1.png',
@@ -41,6 +44,7 @@ export const sampleInfluencers: InfluencerCardProps[] = [
   },
   {
     id: '4',
+    username:"4",
     name: 'Mfoniso Ibokette',
     title: 'Micro-Influencer / Ugc Creator',
     image: '/creator-2.png',
@@ -57,6 +61,7 @@ export const sampleInfluencers: InfluencerCardProps[] = [
 
 export const INFLUENCER_DETAILS={
   "id":"4",
+  "username":"4",
   "name":"Robin Smith",
   "title":"Web3 Influencer & Video Editor",
   "location":{

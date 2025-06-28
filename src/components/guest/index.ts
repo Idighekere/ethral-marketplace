@@ -1,5 +1,8 @@
 export {default as GuestHeader} from "./GuestHeader"
 export {default as GuestHero} from "./GuestHero"
+export * from "./find-hire-influencers-section"
 export * from "./features-section"
 export * from "./partners-section"
 export * from "./pricing-section"
+export * from "./blog-section"
+export * from "./client-reviews-section"

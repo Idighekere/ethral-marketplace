@@ -21,7 +21,7 @@ export function OnboardingHeader () {
   }
 
   return (
-    <header className='w-full  border-gray-800 px-4 sm:px-10 lg:px-16 text-white'>
+    <header className='w-full  border-gray-800 px-4 sm:px-10 lg:px-20 xl:px-36 text-white'>
       <div className=' flex h-16 items-center justify-between'>
         {/* Logo */}
         <Link href='/' className='flex items-center gap-2'>

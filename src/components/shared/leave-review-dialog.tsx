@@ -81,7 +81,7 @@ export function LeaveReviewDialog ({
       {trigger && <DialogTrigger asChild>{trigger}</DialogTrigger>}
       <DialogContent className='sm:max-w-[500px] bg-secondary border-[#939191] border-[0.3px] text-white'>
         <DialogHeader>
-          <DialogTitle className='text-xl font-semibold text-primary'>
+          <DialogTitle className='text-xl  font-semibold text-primary'>
             Leave a Review
           </DialogTitle>
           <DialogDescription className='text-[#CDCDCD]'>

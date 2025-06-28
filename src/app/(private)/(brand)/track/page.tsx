@@ -9,7 +9,6 @@ const TrackPage = () => {
 
   return (
     <>
-
       <div className=' flex flex-col md:flex-row gap-10 md:gap-20'>
         <div className='space-y-5'>
           {/* <Link href=""></Link> */}
@@ -33,14 +32,14 @@ const TrackPage = () => {
         </div>
 
         <div className='bg-[#1E242D] p-3 rounded-xl overflow-hidden shadow-2xl w-full md:w-1/2 relative'>
-        <div className='relative aspect-square w-full'>
-          <Image
-            src={'/track-section-image.png'}
-            alt={'Track Page Image'}
-            fill
-            className=' object-cover'
-            loading='lazy'
-          />
+          <div className='relative aspect-square w-full'>
+            <Image
+              src={'/track-section-image.png'}
+              alt={'Track Page Image'}
+              fill
+              className=' object-cover'
+              loading='lazy'
+            />
           </div>
         </div>
       </div>

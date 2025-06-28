@@ -2,17 +2,7 @@
 
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useEffect } from 'react'
-import { Step1Location } from '@/components/creator/onboarding/step1-location'
-import { Step2Title } from '@/components/creator/onboarding/step2-title'
-import { Step3Description } from '@/components/creator/onboarding/step3-description'
-import { Step4Gender } from '@/components/creator/onboarding/step4-gender'
-import { Step5XDetails } from '@/components/creator/onboarding/step5-x-details'
-import { Step6ContentType } from '@/components/creator/onboarding/step6-content-type'
-import { Step7Images } from '@/components/creator/onboarding/step7-images'
-import { Step8Packages } from '@/components/creator/onboarding/step8-packages'
-import { Step9Mobile } from '@/components/creator/onboarding/step9-mobile'
-import { Step10Verification } from '@/components/creator/onboarding/step10-verification'
-import { Step11Connect } from '@/components/creator/onboarding/step11-connect'
+import { Step1Location,Step2Title,Step3Description,Step4Gender,Step5XDetails,Step6ContentType,Step7Images,Step8Packages,Step9Mobile,Step10Verification,Step11Connect } from '@/components/creator/onboarding'
 
 export default function OnboardingClientPage () {
   const router = useRouter()

@@ -33,14 +33,14 @@ const FAQItem: React.FC<FAQItemProps> = ({
       )}
     >
       <button
-        className='w-full py-2 flex justify-between items-center text-left cursor-pointer group '
+        className='w-full py-3 flex justify-between items-center text-left cursor-pointer group '
         onClick={onToggle}
         aria-expanded={isOpen}
       >
         <span className='font-medium text-base md:text-lg text-neutral-white'>
           {item.question}
         </span>
-        <span className='text-2xl font-medium text-neutral-white group-hover:text-gray-500 transition-colors'>
+        <span className='text-2xl font-medium text-primary group-hover:text-white transition-colors'>
           {isOpen ? '−' : '+'}
         </span>
       </button>
@@ -53,7 +53,7 @@ const FAQItem: React.FC<FAQItemProps> = ({
         )}
       >
         <div className='overflow-hidden'>
-          <p className='text-neutral-white/80'>{item.answer}</p>
+          <p className='text-neutral-white/80 text-left '>{item.answer}</p>
         </div>
       </div>
     </div>
@@ -83,8 +83,8 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ faqs, withCard = false }
 
   if (withCard) {
     return (
-      <Card className='w-full'>
-        <CardContent className='pt-6'>{faqContent}</CardContent>
+      <Card className='  bg-[#1D232C] border-0 p-2 md:p-10 rounded-md'>
+        <CardContent className='py-6'>{faqContent}</CardContent>
       </Card>
     )
   }

@@ -92,8 +92,8 @@ export const ProfileHeader = ({
   )
 
   return (
-    <header className='sticky top-0 left-0 right-0 z-50 bg-background border-b border-white/10 text-white'>
-      <nav className='mx-auto px-5 h-20 flex items-center justify-between sm:px-10 lg:px-16'>
+    <header className='sticky top-0 left-0 right-0 z-50 bg-background  text-white'>
+      <nav className='mx-auto px-5 h-20 flex items-center justify-between sm:px-10 lg:px-20 xl:px-36:p-36'>
         {/* Logo */}
         <Link href='/' className='relative w-32 h-8'>
           <Image

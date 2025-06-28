@@ -22,11 +22,12 @@ export const PricingCard = ({plan,billingCycle="monthly",page="",ctaButton}:Pric
   </div>
 
   {/* Card */}
-  <div className='bg-[#1D232C] rounded-lg p-6 h-fit '>
+  <div className='bg-[#1D232C] rounded-lg p-6 h-full '>
     <div className=' mb-6'>
       <h3 className='text-white text-lg mb-4 border-b inline'>{plan.name}</h3>
       <div className='flex items-baseline  gap-1 border-b border-white/60  py-2'>
-        <p className='text-white text-5xl font-extrabold'><span className="text-lg">$</span>{billingCycle=="monthly"?plan.price.monthly:plan.price.yearly}</p>
+        <p className='text-white text-5xl
+      font-extrabold'><span className="text-lg">$</span>{billingCycle=="monthly"?plan.price.monthly:plan.price.yearly}</p>
         {plan.period && (
             <span className='text-[#6B7280] text-sm'>
             {plan.name.toLowerCase() === 'free' ? '' : billingCycle === "monthly" ? "/month" : "/year"}

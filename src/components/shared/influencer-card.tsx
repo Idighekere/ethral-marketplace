@@ -82,7 +82,7 @@ export const InfluencerCard: React.FC<InfluencerCardProps> = ({
   return (
     <Card
       className={cn(
-        'group relative overflow-hidden border-0  p-0 transition-all duration-300  hover:shadow-2xl cursor-pointer bg-background rounded-md space-y-0 gap-2',variantStyles.card,
+        'group relative overflow-hidden border-0  p-0 transition-all duration-300  hover:shadow-2xl  cursor-pointer bg-background rounded-md space-y-0 gap-2',variantStyles.card,
         className
       )}
       onClick={()=>router.push(`/${id}`)}

@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from "react"
+import { useState } from 'react'
 import { Button } from '../ui/button'
 import { usePathname } from 'next/navigation'
 
@@ -24,10 +24,10 @@ const navigationLinks = [
 const GuestHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const pathname=usePathname()
+  const pathname = usePathname()
   return (
-    <header className='sticky top-0 left-0 right-0 z-50 bg-background border-b border-white/10'>
-      <nav className='mx-auto px-5 h-20 flex items-center justify-between md:px-10 lg:px-16'>
+    <header className='sticky top-0 left-0 right-0 z-50 bg-background '>
+      <nav className=' px-5 h-20 flex items-center justify-between md:px-10 lg:px-20 xl:px-36 '>
         {/* Logo */}
         <Link href='/' className='relative w-32 h-8'>
           <Image
@@ -39,7 +39,7 @@ const GuestHeader = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className='hidden md:flex items-center gap-8'>
+        <div className='hidden md:flex items-center gap-8 justify-center mx-auto'>
           {navigationLinks.map(link => (
             <Link
               key={link.href}
@@ -52,14 +52,17 @@ const GuestHeader = () => {
         </div>
 
         {/* Desktop CTA Buttons */}
-        <div className='hidden md:flex items-center gap-2'>
-          <Button variant='link' asChild className={`${pathname=="/join/creator"?"text-primary":"text-white"} hover:text-primary px-3 `}>
-            <Link href='/join/creator'>Join as Creator</Link>
-          </Button>
-          <Button variant='link' asChild className={`${pathname=="/join/brand"?"text-primary":"text-white"} hover:text-primary px-3 `}>
-            <Link href='/join/brand'>Join as Brand</Link>
-          </Button>
-          <Button asChild>
+        <div className='hidden md:flex items-center gap-1 '>
+
+            <Link href='/join/creator' className={`${
+              pathname == '/join/brand' ? 'text-primary' : 'text-white'
+            } hover:text-primary px-2 text-normal`}>Join as Creator</Link>
+
+            <Link href='/join/brand' className={`${
+              pathname == '/join/brand' ? 'text-primary' : 'text-white'
+            } hover:text-primary px-2 text-normal`}>Join as Brand</Link>
+
+          <Button asChild className="px-4 py-1">
             <Link href='/login'>Login</Link>
           </Button>
         </div>
@@ -114,13 +117,28 @@ const GuestHeader = () => {
 
           {/* Mobile CTA Buttons */}
           <div className='flex flex-col gap-4 mt-4'>
-            <Button variant='link' className={`w-full justify-center hover:text-primary text-lg ${pathname=="/join/creator"?"text-primary":"text-white"}`} asChild>
+            <Button
+              variant='link'
+              className={`w-full justify-center hover:text-primary text-lg ${
+                pathname == '/join/creator' ? 'text-primary' : 'text-white'
+              }`}
+              asChild
+            >
               <Link href='/join/creator'>Join as Creator</Link>
             </Button>
-            <Button variant='link' className={`w-full justify-center  hover:text-primary text-lg ${pathname=="/join/brand"?"text-primary":"text-white"}`} asChild>
+            <Button
+              variant='link'
+              className={`w-full justify-center  hover:text-primary text-lg ${
+                pathname == '/join/brand' ? 'text-primary' : 'text-white'
+              }`}
+              asChild
+            >
               <Link href='/join/brand'>Join as Brand</Link>
             </Button>
-            <Button className='w-full justify-center font-[500] text-lg ' asChild>
+            <Button
+              className='w-full justify-center font-[500] text-lg '
+              asChild
+            >
               <Link href='/login'>Login</Link>
             </Button>
           </div>

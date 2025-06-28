@@ -22,7 +22,7 @@ export default function ImagesPage () {
 
   return (
     <div className='mt-6'>
-      <div className='max-w-3xl space-y-6'>
+      <div className='max-w-3xl:px-36 space-y-6'>
         <div className='relative w-full'>          <div className='aspect-[3/1] relative overflow-hidden rounded-lg bg-secondary'>
             {coverImage ? (
               <>
@@ -47,7 +47,7 @@ export default function ImagesPage () {
               onChange={e => handleImageUpload(e, 'cover')}
               className='absolute inset-0 opacity-0 cursor-pointer z-10'
             />
-          </div>          <div className='absolute -bottom-16 left-1/2 -translate-x-1/2 w-full max-w-xl'>
+          </div>          <div className='absolute -bottom-16 left-1/2 -translate-x-1/2 w-full max-w-xl:px-36'>
             <div className='bg-transparent sm:bg-neutral-white/80 backdrop-blur-sm rounded-lg p-3 '>
               <div className='relative w-25 h-25 md:w-32 md:h-32 mx-auto -mt-20 mb-4'>                <div className='w-full h-full rounded-full border border-[#CDCDCD] overflow-hidden relative bg-neutral-900'>
                   {profileImage ? (

@@ -2,6 +2,10 @@ import { InfluencerCard } from '@/components/shared'
 import { Button } from '@/components/ui/button'
 import { sampleInfluencers } from '@/constants'
 import React from 'react'
+import { generateMetadata } from '@/lib/seo'
+import { BRAND_HOME_SEO } from '@/lib/seo/pages'
+
+export const metadata = generateMetadata(BRAND_HOME_SEO)
 
 const BrandHomePage = () => {
   return (

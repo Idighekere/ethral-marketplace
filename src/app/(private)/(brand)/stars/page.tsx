@@ -4,11 +4,15 @@ import { sampleInfluencers } from '@/constants'
 import { InfluencerSearchForm } from '@/components/influencer'
 import { ChevronRight } from 'lucide-react'
 import React from 'react'
+import { generateMetadata } from '@/lib/seo'
+import { STARS_SEO } from '@/lib/seo/pages'
+
+export const metadata = generateMetadata(STARS_SEO)
 
 const StarsPage = () => {
   return (
     <>
-      <div className=' mx-auto p-5 sm:p-10 lg:p-16  text-neutral-white'>
+      <div className=' mx-auto p-5 sm:p-10 lg:p-20 xl:px-36  text-neutral-white'>
         <div className='flex flex-col justify-center text-center mb-20 items-center max-w-2xl mx-auto'>
           <InfluencerSearchForm />
         </div>

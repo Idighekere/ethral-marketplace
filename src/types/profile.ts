@@ -1,41 +1,76 @@
+export type ProfileType = 'brand' | 'influencer'
+
 export interface BaseProfile {
-  id: string
-  name: string
   username: string
-  avatar?: string
-  coverImage?: string
-  bio?: string
-  location?: {
-    city: string
-    country: string
-  }
-  isComplete: boolean
+  name: string
+  avatar: string
+  coverImage: string
+  bio: string
+  location: string
+  type: ProfileType
+  isVerified?: boolean
+  createdAt: string
+  updatedAt: string
 }
 
-export interface BrandProfile extends BaseProfile {
+export interface BrandProfileType extends BaseProfile {
   type: 'brand'
-  campaigns?: Array<{
-    id: string
-    title: string
-    status: string
-    price: number
-  }>
-  reviews?: Array<{
-    id: string
-    author: string
-    rating: number
-    content: string
-    date: string
-  }>
+  industry: string
+  website: string
+  founded: string
+  campaigns: Campaign[]
+  reviews: Review[]
+}
+
+export interface InfluencerProfileType extends BaseProfile {
+  type: 'influencer'
+  title: string
+  followers: number
+  price: number
+  packages: Package[]
+  photos: string[]
+  pows: ProofOfWork[]
+  reviews: InfluencerReview[]
+  faqs: FAQ[]
+  relatedCategories: string[]
+}
+
+export interface Campaign {
+  id: string
+  title: string
+  image: string
+  budget: number
+  status: 'Active' | 'Upcoming' | 'Completed'
+}
+
+export interface Package {
+  id: string
+  title: string
+  description: string
+  price: number
+}
+
+export interface ProofOfWork {
+  id: string
+  title: string
+  image: string
+  metrics?: {
+    views?: number
+    likes?: number
+    comments?: number
+  }
 }
 
 export interface Review {
   id: string
-  name: string
-  avatar: string
-  title: string
-  review: string
   rating: number
+  comment: string
+  reviewer: string
+  date: string
+}
+
+export interface InfluencerReview extends Review {
+  campaign?: string
 }
 
 export interface FAQ {
@@ -44,22 +79,4 @@ export interface FAQ {
   answer: string
 }
 
-export interface Package {
-  id: string
-  title: string
-  price: number
-  description: string
-}
-
-export interface InfluencerProfile extends BaseProfile {
-  type: 'influencer'
-  title: string
-  followers: number
-  price: number
-  photos: string[]
-  packages: Package[]
-  pows: string[]
-  reviews: Review[]
-  faqs: FAQ[]
-  relatedCategories: string[]
-}
+export type Profile = BrandProfileType | InfluencerProfileType

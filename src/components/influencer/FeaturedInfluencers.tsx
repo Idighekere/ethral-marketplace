@@ -19,30 +19,28 @@ export const FeaturedInfluencers: React.FC<FeaturedInfluencersProps> = ({
   className
 }) => {
   return (
-    <section className={cn('space-y-6 px-5 sm:px-10 lg:px-16', className)}>
+    <section
+      className={cn('space-y-6 px-5 sm:px-10 lg:px-20 xl:px-36', className)}
+    >
       <div className='flex items-center justify-between'>
         <div className='space-y-1'>
           <h2 className='text-xl font-bold text-white'>{title}</h2>
-          <p className='text-sm text-gray-400 w-[95%] truncate'>{subtitle}</p>
+          <p className='text-sm text-[#E9E9E9] w-[85%] md:w-full truncate'>{subtitle}</p>
         </div>
 
-          <a
-            href={"/influencers"}
-            className='text-sm text-[#e9e9e9]'
-          >
-            See All
-          </a>
-
+        <a href={'/influencers'} className='text-sm text-[#e9e9e9] self-end hover:underline'>
+          See All
+        </a>
       </div>
 
       {/* Cards Grid */}
-    <div className="overflow-x-auto pb-4 -mx-4 px-4 scrollbar">
-      <div className="flex gap-4 min-w-max">
-        {influencers.map((influencer) => (
-        <InfluencerCard key={influencer.id} {...influencer} />
-        ))}
+      <div className='overflow-x-auto pb-4 -mx-4 px-4 scrollbar'>
+        <div className='flex gap-4 md:gap-6 min-w-max'>
+          {influencers.map(influencer => (
+            <InfluencerCard key={influencer.id} {...influencer} />
+          ))}
+        </div>
       </div>
-    </div>
     </section>
   )
 }

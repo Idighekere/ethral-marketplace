@@ -73,11 +73,11 @@ const CampaignDetails = ({ campaignId, onBack }: CampaignDetailsProps) => {
   if (isSubmitted) {
     return (
       <div className='container mx-auto px-4 py-8'>
-        <Card className='mx-auto max-w-2xl p-8 text-center'>
+        <Card className='mx-auto max-w-2xl  p-8 text-center'>
           <div className='mb-6 flex justify-center'>
             <CheckCircle className='h-16 w-16 text-green-500' />
           </div>
-          <h1 className='mb-4 text-3xl font-bold'>
+          <h1 className='mb-4 text-3xl  font-bold'>
             Campaign Created Successfully!
           </h1>
           <p className='mb-8 text-gray-600'>
@@ -194,7 +194,7 @@ const CampaignDetails = ({ campaignId, onBack }: CampaignDetailsProps) => {
 
           {/* Section 2: Goals and KPIs */}
           <div className='space-y-6'>
-            <h3 className='text-xl font-bold'>Goals and KPIs</h3>
+            <h3 className='text-xl  font-bold'>Goals and KPIs</h3>
             <div className='space-y-6'>
               <div>
                 <Label>Key Goals</Label>
@@ -233,7 +233,7 @@ const CampaignDetails = ({ campaignId, onBack }: CampaignDetailsProps) => {
 
           {/* Section 3: Target Audience */}
           <div className='space-y-6'>
-            <h3 className='text-xl font-bold'>Target Audience</h3>
+            <h3 className='text-xl  font-bold'>Target Audience</h3>
             <div className='space-y-6'>
               <div>
                 <Label>Who should the content appeal to?</Label>
@@ -279,7 +279,7 @@ const CampaignDetails = ({ campaignId, onBack }: CampaignDetailsProps) => {
 
           {/* Section 4: Content Deliverables */}
           <div className='space-y-6'>
-            <h3 className='text-xl font-bold'>Content Deliverables</h3>
+            <h3 className='text-xl  font-bold'>Content Deliverables</h3>
             <div className='space-y-6'>
               <div>
                 <Label>
@@ -312,7 +312,7 @@ const CampaignDetails = ({ campaignId, onBack }: CampaignDetailsProps) => {
 
           {/* Section 5: Talking Points */}
           <div className='space-y-6'>
-            <h3 className='text-xl font-bold'>Talking Points (Optional)</h3>
+            <h3 className='text-xl  font-bold'>Talking Points (Optional)</h3>
             <div>
               <Textarea
                 placeholder='Add key messages or talking points for creators...'
@@ -327,7 +327,7 @@ const CampaignDetails = ({ campaignId, onBack }: CampaignDetailsProps) => {
 
           {/* Section 6: Budget & Compensation */}
           <div className='space-y-6'>
-            <h3 className='text-xl font-bold'>Budget & Compensation</h3>
+            <h3 className='text-xl  font-bold'>Budget & Compensation</h3>
             <div className='space-y-6'>
               <div>
                 <Label>Total Budget per KOL</Label>
@@ -388,7 +388,7 @@ const CampaignDetails = ({ campaignId, onBack }: CampaignDetailsProps) => {
 
           {/* Section 7: Approval & Delivery Process */}
           <div className='space-y-6'>
-            <h3 className='text-xl font-bold'>Approval & Delivery Process</h3>
+            <h3 className='text-xl  font-bold'>Approval & Delivery Process</h3>
             <div className='space-y-6'>
               <div>
                 <Label>Content Review Required?</Label>

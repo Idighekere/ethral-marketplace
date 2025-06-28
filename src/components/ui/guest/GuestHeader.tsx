@@ -25,7 +25,7 @@ const GuestHeader = () => {
 
   return (
     <header className='fixed top-0 left-0 right-0 z-50 bg-background border-b border-white/10'>
-      <nav className='mx-auto px-5 h-20 flex items-center justify-between md:px-10 lg:px-16'>
+      <nav className='mx-auto px-5 h-20 flex items-center justify-between md:px-10 lg:px-20 xl:px-36:p-36'>
         {/* Logo */}
         <Link href='/' className='relative w-32 h-8'>
           <Image

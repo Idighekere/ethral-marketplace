@@ -24,7 +24,7 @@ const CampaignPricing = ({ onContinue }: Props) => {
   return (
     <div className='mx-auto py-8'>
       <div className='mb-8 text-center'>
-        <h2 className='text-3xl font-bold text-primary'>Pricing Plan</h2>
+        <h2 className='text-3xl  font-bold text-primary'>Pricing Plan</h2>
         <p className='text-lg  mt-2 text-light text-neutral-white/80 mb-4'>
           Upgrade now to Post your Campaign
         </p>

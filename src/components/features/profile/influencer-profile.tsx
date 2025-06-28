@@ -4,31 +4,29 @@ import { POWCard } from '@/components/influencer'
 import {
   FAQSection,
   InfluencerActions,
-  InfluencerCard,
+  
   ReviewCard
 } from '@/components/shared'
 import { Button } from '@/components/ui/button'
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
 import { Card, CardContent, CardHeader, CardAction } from '@/components/ui/card'
-import { INFLUENCER_DETAILS, sampleInfluencers } from '@/constants'
 import { formatFollowers, formatPrice } from '@/utils'
 import { useCartStore } from '@/store/useCartStore'
+import { InfluencerProfile } from '@/types/profile'
 import Image from 'next/image'
-// import { InfluencerDetailsType } from '@/types/influencer'
 
-interface Props {
-  id: string
+interface InfluencerProfileProps {
+  influencer: InfluencerProfile
+  isAuthenticated?: boolean
 }
 
-const InfluencerProfilePage = ({ id }: Props) => {
-  console.log('Rendering influencer profile for', id)
-
-  const influencer = INFLUENCER_DETAILS // Should be fetched based on id
-  const isAuthenticated = true // TODO: Replace with your auth logic
-
+export function InfluencerProfile ({
+  influencer,
+  isAuthenticated = false
+}: InfluencerProfileProps) {
   return (
-    <div className=' space-y-10 md:space-y-14'>
-      <div className='flex flex-col md:flex-row gap-10 items-center justify-between py-10 border'>
+    <div className='space-y-10 md:space-y-14'>
+      <div className='flex flex-col md:flex-row gap-10 md:gap-14 items-center justify-between py-10'>
         <div className='relative sm:w-[20rem] h-[20rem] rounded-md mb-5 aspect-square'>
           <Image
             src={influencer.photos[0]}
@@ -39,7 +37,7 @@ const InfluencerProfilePage = ({ id }: Props) => {
         </div>
 
         <div className='flex flex-col'>
-          <div className='flex gap-2 '>
+          <div className='flex gap-2'>
             <div className=''>
               <Avatar className='w-15 h-15 md:w-30 md:h-30 mb-5'>
                 <AvatarImage src={influencer.avatar} alt={influencer.name} />
@@ -48,11 +46,11 @@ const InfluencerProfilePage = ({ id }: Props) => {
             </div>
 
             <div className='flex flex-col gap-2'>
-              <h2 className='text-lg md:text-2xl font-semibold text-white whitespace-pre-wrap'>
-                {influencer.name} | {influencer.title}{' '}
+              <h2 className='text-lg md:text-2xl  font-semibold text-white whitespace-pre-wrap'>
+                {influencer.name} | {influencer.title}
               </h2>
-              <p className='text-sm text-neutral-white/80 '>
-                {influencer.location.city} {influencer.location.country}
+              <p className='text-sm text-neutral-white/80'>
+                {influencer.location}
               </p>
 
               <div className='flex gap-3'>
@@ -70,7 +68,7 @@ const InfluencerProfilePage = ({ id }: Props) => {
 
             <div className='hidden md:block'>
               <InfluencerActions
-                influencerId={influencer.id}
+                influencerId={influencer.username}
                 isAuthenticated={isAuthenticated}
               />
             </div>
@@ -80,22 +78,22 @@ const InfluencerProfilePage = ({ id }: Props) => {
 
       {/* Packages */}
       <div className=''>
-        <h3 className='text-white text-2xl md:text-3xl font-semibold my-5'>
+        <h3 className='text-white text-2xl  md:text-3xl  font-semibold my-5'>
           Packages
         </h3>
 
         <div className='grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-8'>
           {influencer.packages.map(item => (
             <Card
-              className='w-full hover:shadow-lg transition-shadow duration-200 bg-[#2F353E] border-0 '
+              className='w-full hover:shadow-lg transition-shadow duration-200 bg-[#2F353E] border-0'
               key={item.id}
             >
               <CardHeader className='flex justify-between'>
-                <p className='text-xl text-white font-medium'>{item.title}</p>
-                <p className='text-xl text-white font-medium'>
+                <p className='text-xl  text-white font-medium'>{item.title}</p>
+                <p className='text-xl  text-white font-medium'>
                   {formatPrice(item.price)}
                 </p>
-              </CardHeader>{' '}
+              </CardHeader>
               <CardContent>
                 <p className='text-neutral-white/70'>{item.description}</p>
                 <CardAction className='flex self-end mt-5'>
@@ -103,17 +101,15 @@ const InfluencerProfilePage = ({ id }: Props) => {
                     className='text-base font-semibold'
                     onClick={() => {
                       const { addItem, setOpen } = useCartStore.getState()
-                      // Add this package to the cart
                       addItem({
-                        id: `${influencer.id}-${item.id}`,
+                        id: `${influencer.username}-${item.id}`,
                         name: influencer.name,
                         avatar: influencer.avatar,
                         type: item.title,
                         price: item.price,
-                        influencerId: influencer.id,
+                        influencerId: influencer.username,
                         packageId: item.id
                       })
-                      // Open the cart to show what was added
                       setOpen(true)
                     }}
                   >
@@ -127,9 +123,8 @@ const InfluencerProfilePage = ({ id }: Props) => {
       </div>
 
       {/* Proof of Work */}
-
       <div className=''>
-        <h3 className='text-white text-xl md:text-2xl font-semibold my-5'>
+        <h3 className='text-white text-xl  md:text-2xl  font-semibold my-5'>
           Proof of Work (POW)
         </h3>
 
@@ -143,14 +138,16 @@ const InfluencerProfilePage = ({ id }: Props) => {
       {/* Reviews */}
       <div className=''>
         <div className='flex gap-4 items-center'>
-          <h3 className='text-white text-xl md:text-2xl font-semibold my-5'>
+          <h3 className='text-white text-xl  md:text-2xl  font-semibold my-5'>
             {influencer?.reviews?.length} Reviews.
           </h3>
 
-          <span className='text-sm text-neutral-white/80 flex gap-1 items-center'>
-            <Star fillColor='#FFD966' className='size-4' />
-            {influencer?.reviews?.[0]?.rating}
-          </span>
+          {influencer.reviews.length > 0 && (
+            <span className='text-sm text-neutral-white/80 flex gap-1 items-center'>
+              <Star fillColor='#FFD966' className='size-4' />
+              {influencer.reviews[0]?.rating}
+            </span>
+          )}
         </div>
 
         <div className='grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10'>
@@ -161,33 +158,14 @@ const InfluencerProfilePage = ({ id }: Props) => {
       </div>
 
       {/* FAQ */}
-      <div className='space-y-4'>
-        <h5 className='text-xl md:text-2xl font-medium text-neutral-white'>
-          FAQ
-        </h5>
-
-        <FAQSection faqs={influencer?.faqs} />
-      </div>
-
-      {/* Similar Influencers */}
-      <div className=''>
-        <h4 className='text-white text-lg md:text-xl font-semibold my-5'>
-          Influencers similar to {influencer.name}
-        </h4>
-
-        <div className='overflow-x-auto pb-4 /-mx-4 md:/mx-4  /px-4 scrollbar'>
-          <div className='flex gap-4 min-w-max'>
-            {Array.from({ length: 5 }, (_, index) => (
-              <InfluencerCard
-                key={index}
-                {...sampleInfluencers[1]}
-                variant='scroll'
-                imageSize='medium'
-              />
-            ))}
-          </div>
+      {influencer.faqs.length > 0 && (
+        <div className='space-y-4'>
+          <h5 className='text-xl  md:text-2xl  font-medium text-neutral-white'>
+            FAQ
+          </h5>
+          <FAQSection faqs={influencer.faqs} />
         </div>
-      </div>
+      )}
 
       {/* Related Categories */}
       <div className=''>
@@ -209,5 +187,3 @@ const InfluencerProfilePage = ({ id }: Props) => {
     </div>
   )
 }
-
-export default InfluencerProfilePage

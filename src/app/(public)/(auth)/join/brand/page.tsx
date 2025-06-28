@@ -80,7 +80,11 @@ const BrandSignUpPage = () => {
                 <FormItem>
                   <FormLabel>Name</FormLabel>
                   <FormControl>
-                    <Input className="border-0"  placeholder='John Doe' {...field} />
+                    <Input
+                      className='border-0'
+                      placeholder='John Doe'
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -94,7 +98,11 @@ const BrandSignUpPage = () => {
                 <FormItem>
                   <FormLabel>Brand Name</FormLabel>
                   <FormControl>
-                    <Input className="border-0"  placeholder='Your Brand' {...field} />
+                    <Input
+                      className='border-0'
+                      placeholder='Your Brand'
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -109,7 +117,11 @@ const BrandSignUpPage = () => {
                 <FormItem>
                   <FormLabel>Website</FormLabel>
                   <FormControl>
-                    <Input className="border-0"  placeholder='https://yourbrand.com' {...field} />
+                    <Input
+                      className='border-0'
+                      placeholder='https://yourbrand.com'
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -123,7 +135,11 @@ const BrandSignUpPage = () => {
                 <FormItem>
                   <FormLabel>Brand Email</FormLabel>
                   <FormControl>
-                    <Input className="border-0"  placeholder='contact@yourbrand.com' {...field} />
+                    <Input
+                      className='border-0'
+                      placeholder='contact@yourbrand.com'
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -138,7 +154,11 @@ const BrandSignUpPage = () => {
                 <FormItem>
                   <FormLabel>X Handle (Optional)</FormLabel>
                   <FormControl>
-                    <Input className="border-0"  placeholder='@yourbrand' {...field} />
+                    <Input
+                      className='border-0'
+                      placeholder='@yourbrand'
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -152,7 +172,12 @@ const BrandSignUpPage = () => {
                 <FormItem>
                   <FormLabel>Password</FormLabel>
                   <FormControl>
-                    <Input className="border-0"  type='password' placeholder='••••••••' {...field} />
+                    <Input
+                      className='border-0'
+                      type='password'
+                      placeholder='••••••••'
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

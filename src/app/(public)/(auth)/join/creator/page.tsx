@@ -100,9 +100,9 @@ const CreatorSignUpPage = () => {
                   </FormLabel>
                   <div className='flex space-x-2'>
                     <FormControl>
-                      <div className='relative'>
+                      <div className='relative  w-full flex'>
                         <Input
-                          className='h-10 relative border-0'
+                          className='h-10 /relative border-0 '
                           placeholder='yourname'
                           {...field}
                           onChange={e => {
@@ -120,7 +120,7 @@ const CreatorSignUpPage = () => {
                             !form.getValues('username') ||
                             form.getValues('username').length < 3
                           }
-                          className='absolute right-0 px-1 py-0 hover:bg-transparent hover:text-white rounded-full'
+                          className='absolute right-2 px-4 py-0 text-white  hover:bg-secondary/90 hover:text-white rounded-full top-0 bottom-0 text-sm text-normal h-7  self-center'
                         >
                           {isCheckingUsername ? 'Checking...' : 'Claim'}
                         </Button>
@@ -150,7 +150,11 @@ const CreatorSignUpPage = () => {
                 <FormItem>
                   <FormLabel>Full Name</FormLabel>
                   <FormControl>
-                    <Input className="border-0"  placeholder='John Doe' {...field} />
+                    <Input
+                      className='border-0'
+                      placeholder='John Doe'
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -164,7 +168,11 @@ const CreatorSignUpPage = () => {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input className="border-0"  placeholder='your@email.com' {...field} />
+                    <Input
+                      className='border-0'
+                      placeholder='your@email.com'
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -179,7 +187,12 @@ const CreatorSignUpPage = () => {
                 <FormItem className=''>
                   <FormLabel>Password</FormLabel>
                   <FormControl>
-                    <Input className="border-0"  type='password' placeholder='••••••••' {...field} />
+                    <Input
+                      className='border-0'
+                      type='password'
+                      placeholder='••••••••'
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

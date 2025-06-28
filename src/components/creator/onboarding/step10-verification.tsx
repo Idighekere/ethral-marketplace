@@ -77,7 +77,7 @@ export function Step10Verification ({
               setError(null)
             }}
             placeholder='Enter 6-digit code'
-            className='bg-transparent border-[0.5px] border-[#CDCDCD] text-center text-xl tracking-wider py-6'
+            className='bg-transparent border-[0.5px] border-[#CDCDCD] text-center text-xl:px-36 tracking-wider py-6'
           />
 
           {error && <p className='text-red-500 text-sm'>{error}</p>}
