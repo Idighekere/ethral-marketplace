@@ -10,7 +10,7 @@ interface FeaturesSectionProps {
 
 export function FeaturesSection ({
 
-  subtitle = 'No more struggling with engagement. No more wasted time on manual posting. Just pure Web3 growth',
+  subtitle = 'Forget Engagements, we have the most high quality kols in each major web3 region to get you increased wallet transactions by borrowing important voices to speak to your desired audience.',
   features,
   className = ''
 }: FeaturesSectionProps) {

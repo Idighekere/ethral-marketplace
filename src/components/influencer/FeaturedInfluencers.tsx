@@ -35,9 +35,9 @@ export const FeaturedInfluencers: React.FC<FeaturedInfluencersProps> = ({
 
       {/* Cards Grid */}
       <div className='overflow-x-auto pb-4 -mx-4 px-4 scrollbar'>
-        <div className='flex gap-4 md:gap-6 min-w-max'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 min-w-max'>
           {influencers.map(influencer => (
-            <InfluencerCard key={influencer.id} {...influencer} />
+            <InfluencerCard key={influencer.id} {...influencer} variant="column" />
           ))}
         </div>
       </div>

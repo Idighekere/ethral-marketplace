@@ -47,7 +47,7 @@ export const PricingCard = ({plan,billingCycle="monthly",page="",ctaButton}:Pric
     </div>
 
     <Button
-      className='w-full font-medium bg-primary text-base'
+      className='w-full font-medium bg-primary text-base mt-auto'
       size='lg'
       disabled={plan.name.toLowerCase() === 'free' && page=="campaign"}
       onClick={ctaButton}
