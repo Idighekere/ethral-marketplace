@@ -107,7 +107,7 @@ export function Combobox ({
                     setOpen(false)
                   }}
                   className={cn(
-                    'flex items-center  text-white',value === option.value ? 'bg-[#cdcdcd]/10' : 'bg-transparent'
+                    'flex items-center hover:bg-secondary/30 text-white',value === option.value ? 'bg-[#cdcdcd]/10' : 'bg-transparent'
                 )}
                 >
                   <Check
