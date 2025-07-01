@@ -37,7 +37,7 @@ export const InfluencerActions = ({
   const [isShareOpen, setIsShareOpen] = useState(false)
   const { isInfluencerInAnyList } = useLists()
   const isSaved = isInfluencerInAnyList(influencerId)
-  const { setOpen,addItem } = useCartStore()
+  const { setOpen, addItem } = useCartStore()
   const profileUrl =
     typeof window !== 'undefined'
       ? `${window.location.origin}/${influencerId}`
@@ -46,13 +46,13 @@ export const InfluencerActions = ({
     setIsListsDialogOpen(true)
   }
 
-  const influencer = useInfluencer(influencerId);
+  const influencer = useInfluencer(influencerId)
   const handleAddToCart = () => {
     // Use our custom hook to get influencer data
 
     // If the influencer has packages, add the first one to the cart
     if (influencer.packages && influencer.packages.length > 0) {
-      const defaultPackage = influencer.packages[0];
+      const defaultPackage = influencer.packages[0]
 
       addItem({
         id: `${influencerId}-${defaultPackage.id}`,
@@ -62,20 +62,20 @@ export const InfluencerActions = ({
         price: defaultPackage.price,
         influencerId: influencerId,
         packageId: defaultPackage.id
-      });
+      })
     } else {
       // If no packages, add the influencer with their base price
       addItem({
         id: influencerId,
         name: influencer.name,
         avatar: influencer.avatar,
-        type: influencer.title || "Content Creator",
+        type: influencer.title || 'Content Creator',
         price: influencer.price,
         influencerId: influencerId
-      });
+      })
     }
 
-    setOpen(true); // Open the cart
+    setOpen(true) // Open the cart
   }
 
   if (variant === 'header') {
@@ -159,8 +159,8 @@ export const InfluencerActions = ({
                     </Button>
                     <div className='text-center'>
                       <Button variant='link' asChild>
-                        <Link href='/login'>
-                          Already have an account? Log in
+                        <Link href='/join/creator'>
+                          Are you a creator? Sign up here
                         </Link>
                       </Button>
                     </div>
@@ -209,11 +209,11 @@ export const InfluencerActions = ({
 
       <Button
         className='flex items-center border-[0.4px] border-[#cdcdcd]/60 rounded-full h-11 gap-2 px-2 py-2'
-        variant="outline"
+        variant='outline'
         onClick={() => handleAddToCart()}
       >
         <ShoppingCart className='text-primary' />
-                <span className='text-neutral-white text-sm'>Add to cart</span>
+        <span className='text-neutral-white text-sm'>Add to cart</span>
       </Button>
 
       <Dialog open={isListsDialogOpen} onOpenChange={setIsListsDialogOpen}>
@@ -257,11 +257,6 @@ export const InfluencerActions = ({
                   <Button asChild className='w-full'>
                     <Link href='/join/brand'>Join as Brand</Link>
                   </Button>
-                  <div className='text-center'>
-                    <Button variant='link' asChild>
-                      <Link href='/login'>Already have an account? Log in</Link>
-                    </Button>
-                  </div>
                 </div>
               </div>
             </>

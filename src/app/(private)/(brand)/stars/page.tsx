@@ -1,20 +1,31 @@
+'use client'
+
 import { InfluencerCard, Footer } from '@/components/shared'
 import { Button } from '@/components/ui/button'
 import { sampleInfluencers } from '@/constants'
 import { InfluencerSearchForm } from '@/components/influencer'
 import { ChevronRight } from 'lucide-react'
-import React from 'react'
-import { generateMetadata } from '@/lib/seo'
-import { STARS_SEO } from '@/lib/seo/pages'
-
-export const metadata = generateMetadata(STARS_SEO)
+import React, { useState } from 'react'
 
 const StarsPage = () => {
+  // Mock authentication and premium status
+  const [isPremium, setIsPremium] = useState(false)
+  const isAuthenticated = true
+  const handleUpgrade = () => {
+    setIsPremium(true)
+    console.log('Redirecting to upgrade...')
+  }
+
   return (
     <>
       <div className=' mx-auto   text-neutral-white'>
         <div className='flex flex-col justify-center text-center mb-20 items-center max-w-4xl mx-auto'>
-          <InfluencerSearchForm />
+          <InfluencerSearchForm
+            showFilters={true}
+            isAuthenticated={isAuthenticated}
+            isPremium={isPremium}
+            onUpgrade={handleUpgrade}
+          />
         </div>
 
         <section>

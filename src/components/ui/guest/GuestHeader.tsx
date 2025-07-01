@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { Button } from '../ui/button'
+import { Button } from '../button'
 import { useState } from 'react'
 
 const navigationLinks = [
@@ -66,7 +66,7 @@ const GuestHeader = () => {
             <Link href='/brand'>Join as Brand</Link>
           </Button>
           <Button asChild>
-            <Link href='/login'>Login</Link>
+            <Link href='/join/creator'>Join as Creator</Link>
           </Button>
         </div>
 
@@ -138,7 +138,7 @@ const GuestHeader = () => {
               className='w-full justify-center font-[500] text-lg '
               asChild
             >
-              <Link href='/login'>Login</Link>
+              <Link href='/join/creator'>Join as Creator</Link>
             </Button>
           </div>
         </div>

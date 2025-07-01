@@ -4,7 +4,6 @@ import { createContext, useContext, useState, ReactNode } from 'react'
 
 type Gender = 'Male' | 'Female' | 'Other'
 type FollowerRange = '1k-10k' | '10k-50k' | '50k-100k' | '100k-500k' | '500k-1M' | '1M+'
-type ContentType = 'Lifestyle' | 'Sport' | 'Technology' | 'Fashion' | 'Beauty' | 'Travel' | 'Food' | 'Gaming' | 'Business' | 'Education' | 'Entertainment' | 'Health' | 'Fitness' | 'Art' | 'Music' | 'Photography'
 type PostType = 'X Post' | 'Thread post' | 'Space speaking' | 'X Live AMA' | 'Retweet' | 'Quote'
 
 interface ContentPackage {
@@ -21,7 +20,7 @@ interface CreatorOnboardingState {
   gender: Gender | null
   xHandle: string
   followerRange: FollowerRange | null
-  contentTypes: ContentType[]
+  contentTypes: string[]
   profileImage: File | null
   contentImages: File[]
   contentPackages: ContentPackage[]

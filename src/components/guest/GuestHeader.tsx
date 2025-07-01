@@ -27,9 +27,9 @@ const GuestHeader = () => {
   const pathname = usePathname()
   return (
     <header className='sticky top-0 left-0 right-0 z-50 bg-background '>
-      <nav className=' px-5 h-20 flex items-center justify-between md:px-10 lg:px-20 xl:px-36 '>
+      <nav className=' px-5 h-20 /flex items-center justify-between md:px-10 lg:px-20 xl:px-36 grid grid-cols-3 '>
         {/* Logo */}
-        <Link href='/' className='relative w-32 h-8'>
+        <Link href='/' className='relative w-32 h-8 flex items-center'>
           <Image
             src='/ethral.svg'
             alt='Ethral Logo'
@@ -52,17 +52,26 @@ const GuestHeader = () => {
         </div>
 
         {/* Desktop CTA Buttons */}
-        <div className='hidden md:flex items-center gap-1 '>
-
-            <Link href='/join/creator' className={`${
+        <div className='hidden md:flex items-center gap-3 md:justify-end whitespace-nowrap'>
+          <Link
+            href='/join/creator'
+            className={`${
               pathname == '/join/brand' ? 'text-primary' : 'text-white'
-            } hover:text-primary px-2 text-normal`}>Join as Creator</Link>
+            } hover:text-primary  text-normal`}
+          >
+            Join as Creator
+          </Link>
 
-            <Link href='/join/brand' className={`${
+          <Link
+            href='/join/brand'
+            className={`${
               pathname == '/join/brand' ? 'text-primary' : 'text-white'
-            } hover:text-primary px-2 text-normal`}>Join as Brand</Link>
+            } hover:text-primary  text-normal`}
+          >
+            Join as Brand
+          </Link>
 
-          <Button asChild className="px-4 py-1">
+          <Button asChild className=''>
             <Link href='/login'>Login</Link>
           </Button>
         </div>
@@ -139,7 +148,7 @@ const GuestHeader = () => {
               className='w-full justify-center font-[500] text-lg '
               asChild
             >
-              <Link href='/login'>Login</Link>
+              <Link href='/join/creator'>Join as Creator</Link>
             </Button>
           </div>
         </div>

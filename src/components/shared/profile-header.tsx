@@ -70,18 +70,18 @@ export const ProfileHeader = ({
 
   // Desktop header for guests
   const DesktopGuestHeader = () => (
-    <div className='hidden md:flex items-center gap-2'>
+    <div className='hidden md:flex md:justify-end items-center gap-2'>
       <Button
         variant='link'
         asChild
-        className='text-white hover:text-primary px-3'
+        className='text-white hover:text-primary'
       >
         <Link href='/join/creator'>Join as Creator</Link>
       </Button>
       <Button
         variant='link'
         asChild
-        className='text-white hover:text-primary px-3'
+        className='text-white hover:text-primary'
       >
         <Link href='/join/brand'>Join as Brand</Link>
       </Button>
@@ -93,9 +93,9 @@ export const ProfileHeader = ({
 
   return (
     <header className='sticky top-0 left-0 right-0 z-50 bg-background  text-white'>
-      <nav className='mx-auto px-5 h-20 flex items-center justify-between sm:px-10 lg:px-20 xl:px-36:p-36'>
+      <nav className='mx-auto px-5 h-20 /flex items-center justify-between sm:px-10 lg:px-20 xl:px-36:p-36 grid grid-cols-3'>
         {/* Logo */}
-        <Link href='/' className='relative w-32 h-8'>
+        <Link href='/' className='flex justify-center relative w-32 h-8'>
           <Image
             src='/ethral.svg'
             alt='Ethral Logo'
@@ -105,7 +105,7 @@ export const ProfileHeader = ({
         </Link>
 
         {/* Desktop Navigation */}
-        <div className='hidden md:flex items-center gap-8'>
+        <div className='hidden md:flex md:justify-center items-center gap-8'>
           {navigationLinks.map(link => (
             <Link
               key={link.href}

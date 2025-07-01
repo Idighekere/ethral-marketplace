@@ -224,9 +224,9 @@ const BrandSignUpPage = () => {
           </p>
 
           <p className='text-center text-sm text-[#F3F4F6]/70'>
-            Already have an account?{' '}
-            <Link href='/login' className='text-primary/70 underline'>
-              Login
+            Are you a creator?{' '}
+            <Link href='/join/creator' className='text-primary/70 underline'>
+              Sign up as Creator
             </Link>
           </p>
         </form>

@@ -9,10 +9,10 @@ export const influencerSearchFormSchema = z.object({
     .trim(),
   category: z
     .string()
-    .min(1, "Please enter a category")
-    .min(2, "Category must be at least 2 characters")
-    .max(50, "Category must be less than 50 characters")
-    .trim(),
+    .max(200, "Categories must be less than 200 characters")
+    .trim()
+    .optional()
+    .or(z.literal("")),
 })
 
 export type InfluencerSearchFormData = z.infer<typeof influencerSearchFormSchema>

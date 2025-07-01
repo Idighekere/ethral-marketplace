@@ -11,8 +11,8 @@ interface Props {
 
 const CampaignPricing = ({ onContinue }: Props) => {
   const { updateCampaignData, setStep } = useCampaignStore()
-  const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>(
-    'monthly'
+  const [billingCycle, setBillingCycle] = useState<'quaterly' | 'yearly'>(
+    'quaterly'
   )
 
   const handlePlanSelection = (plan: string) => {
@@ -31,25 +31,28 @@ const CampaignPricing = ({ onContinue }: Props) => {
 
         <div className='mt-4 flex justify-between gap-1 bg-secondary rounded-full p-1.5 w-fit mx-auto mb-6 md:mb-12'>
           <Button
-            variant={billingCycle === 'monthly' ? 'default' : 'ghost'}
-            onClick={() => setBillingCycle('monthly')}
+            variant={billingCycle === 'quaterly' ? 'default' : 'ghost'}
+            onClick={() => setBillingCycle('quaterly')}
             className={`rounded-full text-regular ${
-              billingCycle === 'monthly'
+              billingCycle === 'quaterly'
                 ? 'bg-primary text-black'
                 : 'text-white'
             }`}
           >
-            Bill Monthly
+            Bill Quaterly
           </Button>
+          <div className="relative">
           <Button
             variant={billingCycle === 'yearly' ? 'default' : 'ghost'}
             onClick={() => setBillingCycle('yearly')}
-            className={`rounded-full text-normal ${
+            className={`rounded-full text-normal relative  ${
               billingCycle === 'yearly' ? 'bg-primary text-black' : 'text-white'
             }`}
           >
             Bill Yearly
+          <span className="absolut/e px-2  text-sm bg-[#1D232C] text-white rounded-full right-0">Save 20%</span>
           </Button>
+            </div>
         </div>
       </div>
 

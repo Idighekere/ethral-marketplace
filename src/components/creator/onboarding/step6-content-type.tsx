@@ -10,41 +10,9 @@ interface Step6ContentTypeProps {
   onBack: () => void
 }
 
-type ContentType =
-  | 'Lifestyle'
-  | 'Sport'
-  | 'Technology'
-  | 'Fashion'
-  | 'Beauty'
-  | 'Travel'
-  | 'Food'
-  | 'Gaming'
-  | 'Business'
-  | 'Education'
-  | 'Entertainment'
-  | 'Health'
-  | 'Fitness'
-  | 'Art'
-  | 'Music'
-  | 'Photography'
+const contentTypeOptions: string[] = [
 
-const contentTypeOptions: ContentType[] = [
-  'Lifestyle',
-  'Sport',
-  'Technology',
-  'Fashion',
-  'Beauty',
-  'Travel',
-  'Food',
-  'Gaming',
-  'Business',
-  'Education',
-  'Entertainment',
-  'Health',
-  'Fitness',
-  'Art',
-  'Music',
-  'Photography'
+ 'NFT Collector','Defi Educator','Degen Trader','DAO Advocate','DePIN Enthusiast','Airdrop Farmer','Wallet Security Expert','Web3 Educator','Market Analyst','DevTool Evangelist','Podcast Host','Solana Maxi','Eth Purist','Arbitrum Farmer'
 ]
 
 export function Step6ContentType ({

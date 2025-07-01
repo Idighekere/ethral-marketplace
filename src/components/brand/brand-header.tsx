@@ -42,9 +42,9 @@ const BrandHeader = () => {
   return (
     <>
       <header className='sticky top-0 left-0 right-0 z-50 bg-background  text-white'>
-        <nav className='  px-5 h-20 flex items-center justify-between sm:px-10 lg:px-20 xl:px-36 w-full'>
+        <nav className='  px-5 h-20 /flex items-center justify-between sm:px-10 lg:px-20 xl:px-36 w-full grid grid-cols-3'>
           {/* Logo */}
-          <Link href='/' className='relative w-32 h-8'>
+          <Link href='/' className='relative w-32 h-8 flex justify-center'>
             <Image
               src='/ethral.svg'
               alt='Ethral Logo'
@@ -55,8 +55,8 @@ const BrandHeader = () => {
 
           {/* Desktop Navigation */}
           <div
-            className={` items-center gap-8 ${
-              isHidden ? 'hidden' : 'hidden md:flex'
+            className={` items-center  gap-8 ${
+              isHidden ? 'hidden' : 'hidden md:flex md:justify-center'
             }`}
           >
             {navigationLinks.map(link => (
@@ -75,7 +75,7 @@ const BrandHeader = () => {
           </div>
 
           {/* Desktop Actions */}
-          <div className='flex items-center gap-4 '>
+          <div className='flex items-center gap-4 justify-end '>
             <Button
               variant='secondary'
               asChild

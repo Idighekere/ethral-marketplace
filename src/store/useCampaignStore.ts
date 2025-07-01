@@ -10,7 +10,7 @@ export const campaignSchema = z.object({
 
   // Step 2 - Pricing plan selection
   selectedPlan: z.string(),
-  billingCycle: z.enum(['monthly', 'yearly']),
+  billingCycle: z.enum(['quaterly', 'yearly']),
 
   // Step 3
   campaignDetails: z.object({
@@ -64,7 +64,7 @@ const initialCampaignData: CampaignState = {
 
   // Step 2
   selectedPlan: 'starter',
-  billingCycle: 'monthly',
+  billingCycle: 'quaterly',
 
   // Step 3
   campaignDetails: {
