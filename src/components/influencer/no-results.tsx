@@ -58,7 +58,7 @@ const NoResults = ({  }: NoResultsProps) => {
               key={key}
               variant="outline"
               size="sm"
-              onClick={() => clearFilter(label)}
+              onClick={() => clearFilter(key as keyof typeof filters)}
               className="border-gray-600 text-gray-300 hover:bg-gray-700"
             >
               Remove {label}

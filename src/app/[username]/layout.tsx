@@ -7,7 +7,11 @@ import { getProfileType } from '@/lib/profile'
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo'
 import { Metadata } from 'next'
 
-export async function generateMetadata ({ params }: { params: { username: string } }): Promise<Metadata> {
+export async function generateMetadata ({
+  params
+}: {
+  params: Promise<{ username: string }>
+}): Promise<Metadata> {
   const { username } = await params
 
   try {
@@ -15,18 +19,20 @@ export async function generateMetadata ({ params }: { params: { username: string
 
     const title = username
 
-    const description = profileType === 'brand'
-      ? `Discover ${username}'s brand profile, campaigns, and collaborations on Ethral.`
-      : `View ${username}'s influencer profile, packages, and proof of work on Ethral.`
+    const description =
+      profileType === 'brand'
+        ? `Discover ${username}'s brand profile, campaigns, and collaborations on Ethral.`
+        : `View ${username}'s influencer profile, packages, and proof of work on Ethral.`
 
     return generateSEOMetadata({
       title,
       description,
       canonical: `/${username}`,
       type: 'profile',
-      keywords: profileType === 'brand'
-        ? ['brand profile', 'brand campaigns', 'brand collaboration']
-        : ['influencer profile', 'content creator', 'influencer packages']
+      keywords:
+        profileType === 'brand'
+          ? ['brand profile', 'brand campaigns', 'brand collaboration']
+          : ['influencer profile', 'content creator', 'influencer packages']
     })
   } catch {
     return generateSEOMetadata({
@@ -40,9 +46,9 @@ export async function generateMetadata ({ params }: { params: { username: string
 
 interface ProfileLayoutProps {
   children: React.ReactNode
-  params: {
+  params: Promise<{
     username: string
-  }
+  }>
 }
 
 export default async function ProfileLayout ({
