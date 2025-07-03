@@ -82,7 +82,7 @@ export const InfluencerCard: React.FC<InfluencerCardProps> = ({
         className
       )}
       onClick={()=>router.push(`/${username}`)}
-      data-aos="fade-up" data-aos-anchor-placement="bottom-bottom"
+      
     >
       <Link className="gap-2" href={`/${username}`}>
       <div className={cn('relative z-10  ',variantStyles.wrapper)}>

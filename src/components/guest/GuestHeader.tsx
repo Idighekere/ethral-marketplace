@@ -9,11 +9,11 @@ import { usePathname } from 'next/navigation'
 const navigationLinks = [
   {
     label: 'How it works',
-    href: '/how-it-works'
+    href: '/#how-it-works'
   },
   {
     label: 'Pricing',
-    href: '/pricing'
+    href: '/#pricing'
   },
   {
     label: 'Blog',

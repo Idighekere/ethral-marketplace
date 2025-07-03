@@ -13,7 +13,7 @@ export const PricingSection = () => {
     'quaterly'
   )
   return (
-    <section className='w-full py-16 px-5 sm:px-10 lg:px-20 xl:p-36'>
+    <section className='w-full py-16 px-5 sm:px-10 lg:px-20 xl:p-36' id="pricing">
       <div className=' px-4 md:px-6'>
         <div className='text-center mb-12'>
           <h2 className='text-3xl font-bold text-primary mb-4 font-epilogue'>

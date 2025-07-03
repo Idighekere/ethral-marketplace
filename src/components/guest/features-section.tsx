@@ -17,6 +17,7 @@ export function FeaturesSection ({
   return (
     <section
       className={` text-white py-16 md:py-24 px-4 sm:px-10 lg:px-20 xl:px-36 ${className}`}
+      id="how-it-works"
     >
       <div className='max-w-7xl  mx-auto'>
         {/* Header */}
