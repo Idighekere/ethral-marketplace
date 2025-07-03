@@ -1,7 +1,7 @@
 'use client'
 
-import React,{useEffect} from 'react'
-import { useParams,useRouter } from 'next/navigation'
+import React from 'react'
+import { useParams,notFound } from 'next/navigation'
 import { useProfile } from '@/hooks/useProfile'
 import {
   BrandProfile,
@@ -29,16 +29,9 @@ const LoadingProfile = () => (
 
 export default function ProfilePage () {
   const params = useParams()
-  const router = useRouter()
+  // const router = useRouter()
   const username = params?.username as string
   const { profile, profileType, loading, error } = useProfile(username)
-
-  useEffect(() => {
-    // Only redirect after loading is complete and no profile found
-    if (!loading && !profile && !error) {
-      router.replace('/')
-    }
-  }, [loading, profile, error, router])
 
 
   if (loading) {
@@ -55,7 +48,7 @@ export default function ProfilePage () {
   }
 
   if (!profile) {
-     return <LoadingProfile/>
+     notFound()
   }
 
   if (profileType === 'brand') {
