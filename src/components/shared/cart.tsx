@@ -12,7 +12,8 @@ import { Button } from '../ui/button'
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
 import { useEffect } from 'react'
 import { cn } from '@/lib/utils'
-import { ShoppingCart, Trash } from 'lucide-react'
+import { Trash } from 'lucide-react'
+import {CartIcon} from '@/components/icons'
 import { formatPrice } from '@/utils'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
@@ -56,7 +57,7 @@ export const Cart = ({ iconClassName = '', cartOpen = false }: Props) => {
       <SheetTrigger asChild>
         <Button variant='ghost' size='icon' className='hover:bg-transparent'>
           <span className="relative">
-            <ShoppingCart className={cn('text-neutral-white', iconClassName)} />
+            <CartIcon className={cn('text-neutral-white', iconClassName)} />
             {cartItems.length > 0 && (
               <span className="absolute -top-2 -right-2 flex items-center justify-center w-5 h-5 bg-primary text-black text-xs font-bold rounded-full">
                 {cartItems.length}
@@ -193,7 +194,7 @@ const EmptyCart = () => {
     <div className='flex flex-col items-center justify-center gap-5 h-full w-full'>
       <div className="space-y-5 flex flex-col items-center justify-center text-center h-full w-full">
 
-      <ShoppingCart className='size-14 lg:size-30 font-medium' />
+      <CartIcon className='size-14 lg:size-30 font-medium' />
       <h3 className='font-semibold text-xl  md:text-2xl  '>Your Cart is Empty</h3>
       <p className='text-center'>
         Start adding influencers by clicking the button below

@@ -10,6 +10,18 @@ interface Step4GenderProps {
   onContinue: () => void
   onBack: () => void
 }
+interface Option {
+  label: string;
+  value: string;
+}
+
+const options: Option[] = [
+  { label: "Male", value: "Male" },
+  { label: "Female", value: "Female" },
+  { label: "Other", value: "Other" },
+];
+
+
 
 export function Step4Gender ({ onContinue, onBack }: Step4GenderProps) {
   const { state, updateGender } = useCreatorOnboarding()
@@ -22,6 +34,9 @@ export function Step4Gender ({ onContinue, onBack }: Step4GenderProps) {
     }
 
     onContinue()
+  }
+  const handleOptionClick=(optionValue: 'Male' | 'Female' | 'Other')=>{
+    updateGender(optionValue )
   }
 
   return (
@@ -42,44 +57,26 @@ export function Step4Gender ({ onContinue, onBack }: Step4GenderProps) {
           }}
           className='grid grid-cols-1 gap-4 md:grid-cols-3'
         >
-          <div
-            className={`
-            border rounded-md p-4 flex items-center space-x-3 cursor-pointer
-            ${state.gender === 'Male' ? 'border-primary' : 'border-[#CDCDCD]'}
-            hover:border-primary/70 transition-colors
-          `}
-          >
-            <RadioGroupItem value='Male' id='male' />
-            <Label htmlFor='male' className='cursor-pointer'>
-              Male
-            </Label>
-          </div>
+          {
+            options.map(option=>(<div
+              className={`
+              border rounded-md p-4 flex items-center space-x-3 cursor-pointer
+              ${state.gender === option.value ? 'border-primary text-primary' : 'border-[#CDCDCD] text-white'}
+              hover:border-primary/70 transition-colors
+            `}
+            key={option.label}
+            role="presentation"
+            onClick={()=>handleOptionClick(option.value as 'Male'| 'Female'|'Other')}
+            >
+              <RadioGroupItem value={option.value} id={option.value.toLowerCase()} className={`${state.gender==option.value?'border-primary':'border-input'}`} />
+              <Label htmlFor={option.value.toLowerCase()} className={`cursor-pointer pb-0 ${state.gender==option.value?'text-primary':'text-white'}`}>
+                {option.label}
+              </Label>
+            </div>))
+          }
 
-          <div
-            className={`
-            border rounded-md p-4 flex items-center space-x-3 cursor-pointer
-            ${state.gender === 'Female' ? 'border-primary' : 'border-[#CDCDCD]'}
-            hover:border-primary/70 transition-colors
-          `}
-          >
-            <RadioGroupItem value='Female' id='female' />
-            <Label htmlFor='female' className='cursor-pointer'>
-              Female
-            </Label>
-          </div>
 
-          <div
-            className={`
-            border rounded-md p-4 flex items-center space-x-3 cursor-pointer
-            ${state.gender === 'Other' ? 'border-primary' : 'border-[#CDCDCD]'}
-            hover:border-primary/70 transition-colors
-          `}
-          >
-            <RadioGroupItem value='Other' id='other' />
-            <Label htmlFor='other' className='cursor-pointer'>
-              Other
-            </Label>
-          </div>
+
         </RadioGroup>
 
         {error && <p className='text-red-500 text-sm'>{error}</p>}

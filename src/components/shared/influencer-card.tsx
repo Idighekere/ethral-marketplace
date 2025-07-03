@@ -13,6 +13,7 @@ import { formatFollowers, formatPrice } from '@/utils'
 
 export interface InfluencerCardProps {
   id: string
+  username:string;
   name: string
   title: string
   image: string
@@ -39,11 +40,6 @@ const badgeConfig = {
   }
 }
 
-const imageSizeConfig = {
-  small: 'h-[200px] w-[200px]',
-  medium: 'h-[250px] w-[250px]',
-  large: 'h-[300px] w-[300px]'
-}
 
 const variantConfig = {
   scroll: {
@@ -64,6 +60,7 @@ const variantConfig = {
 export const InfluencerCard: React.FC<InfluencerCardProps> = ({
   id,
   name,
+  username,
   title,
   image,
   rating,
@@ -72,26 +69,25 @@ export const InfluencerCard: React.FC<InfluencerCardProps> = ({
   badges,
   className,
     variant = 'column',
-  imageSize = 'large'
+
 }) => {
 
   const variantStyles = variantConfig[variant]
-  const imageSizeStyle = imageSizeConfig[imageSize]
 
   const router=useRouter()
   return (
     <Card
       className={cn(
-        'group relative overflow-hidden border-0  p-0 transition-all duration-300  hover:shadow-2xl  cursor-pointer bg-background rounded-md space-y-0 gap-2',variantStyles.card,
+        'group relative overflow-hidden border-0  p-0 transition-all duration-300 shadow-none hover:shadow-2xl  cursor-pointer bg-background rounded-md space-y-0 gap-2',variantStyles.card,
         className
       )}
-      onClick={()=>router.push(`/${id}`)}
+      onClick={()=>router.push(`/${username}`)}
     >
-      <Link className="gap-2" href={`/${id}`}>
+      <Link className="gap-2" href={`/${username}`}>
       <div className={cn('relative z-10  ',variantStyles.wrapper)}>
         {/* Badges */}
         <div className='absolute top-3 left-2 z-10 flex flex-wrap gap-1 '>
-          {badges.map((badge, index) => {
+          {badges && badges.map((badge, index) => {
             const BadgeIcon = badgeConfig[badge.type]?.icon || Star
             const badgeClassName =
               badgeConfig[badge.type]?.className || 'bg-black/70 text-white'
@@ -112,16 +108,14 @@ export const InfluencerCard: React.FC<InfluencerCardProps> = ({
         </div>
 
         <div className={cn(
-            'relative aspect-square rounded-md',
-            imageSizeStyle,
+            'relative aspect-square rounded-md w-full',
             variantStyles.imageWrapper
           )}>
           <Image
             src={image}
             alt={name}
             fill
-            className='rounded-md object-cover shadow-lg transition-transform duration-300
-             group-hover:scale-102 aspect-square'
+            className='rounded-md object-cover shadow-lg transition-transform duration-300 group-hover:scale-102'
           />
         </div>
 
@@ -136,8 +130,8 @@ export const InfluencerCard: React.FC<InfluencerCardProps> = ({
       <div className='relative z-10 mt-2   '>
         {/* Name and Title */}
         <div className='space-y-2'>
-          <div className='flex items-center justify-between text-xs text-[#e9e9e9] '>
-            <p className='text-xs leading-tight truncate w-27 md:w-30'>
+          <div className='flex items-center justify-between text-sm text-[#e9e9e9] whitespace-nowrap'>
+            <p className=' leading-tight truncate w-27 md:w-30'>
               {name}
             </p>
             <div className='flex items-center gap-3'>
@@ -145,7 +139,7 @@ export const InfluencerCard: React.FC<InfluencerCardProps> = ({
               <span className=''>{formatPrice(price)}</span>
             </div>
           </div>
-          <h3 className='text-sm font-medium text-white leading-tight truncate w-[85%]'>
+          <h3 className='text-[14px] font-normal text-white leading-tight truncate w-[85%]'>
             {title}
           </h3>
         </div>

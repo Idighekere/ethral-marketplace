@@ -49,7 +49,7 @@ export const ClientReviewsSection = () => {
     <section className='w-full py-16 px-5 sm:px-10 lg:px-20 xl:px-36 '>
       <div className=' mx-auto'>
         <div className='grid gap-8 md:grid-cols-2 max-w-7xl mx-auto items-start h-[60%]' >
-          <div className='text-left /h-auto mb-auto'>
+          <div className='text-left /h-auto mb-auto md:-mb-20'>
             <h2 className='text-3xl md:text-4xl font-bold text-white mb-4 '>
               Hear what our clients say
             </h2>

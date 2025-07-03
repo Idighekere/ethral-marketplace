@@ -122,7 +122,14 @@
     @apply bg-background text-foreground;
   }
 }
+@keyframes fade {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
 
+.animate-fade {
+  animation: fade 2s ease-in-out infinite;
+}
 /* Custom Scrollbar */
 .scrollbar::-webkit-scrollbar {
   width: 6px;

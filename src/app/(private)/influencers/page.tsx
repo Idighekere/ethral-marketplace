@@ -35,12 +35,11 @@ const InfluencersPage = () => {
           {/* Cards Grid */}
 
           <div className='grid grid-cols-1 sm:grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4  mt-6'>
-            {Array.from({ length: 16 }, (_, index) => (
+            {sampleInfluencers.map(influencer => (
               <InfluencerCard
-                key={index}
-                {...sampleInfluencers[0]}
+                key={influencer.id}
+                {...influencer}
                 variant='column'
-                imageSize='large'
               />
             ))}
           </div>

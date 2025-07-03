@@ -42,7 +42,7 @@ const BrandHeader = () => {
   return (
     <>
       <header className='sticky top-0 left-0 right-0 z-50 bg-background  text-white'>
-        <nav className='  px-5 h-20 /flex items-center justify-between sm:px-10 lg:px-20 xl:px-36 w-full grid grid-cols-3'>
+        <nav className={`  px-5 h-20 /flex items-center justify-between sm:px-10 lg:px-20 xl:px-36 w-full grid    ${isHidden ? 'grid-cols-2':'grid-cols-2 md:grid-cols-3'}`}>
           {/* Logo */}
           <Link href='/' className='relative w-32 h-8 flex justify-center'>
             <Image

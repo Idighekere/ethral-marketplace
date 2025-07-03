@@ -44,7 +44,7 @@ export function BrandProfile({ brand }: BrandProfileProps) {
         <h2 className='text-xl  font-semibold mb-4 text-white'>Campaigns</h2>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
           {brand.campaigns.map(campaign => (
-            <Card key={campaign.id} className="py-0 gap-0">
+            <Card key={campaign.id} className="py-0 gap-0 bg-secondary rounded-lg">
               <div className='relative w-full h-[160px]'>
                 <Image
                   src={campaign.image}
@@ -79,12 +79,12 @@ export function BrandProfile({ brand }: BrandProfileProps) {
       {brand.reviews.length > 0 && (
         <div>
           <h2 className='text-xl  font-semibold mb-4 text-white'>Reviews</h2>
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-4 text-white'>
             {brand.reviews.map(review => (
               <Card key={review.id} className='p-4'>
                 <div className='flex justify-between items-start mb-2'>
                   <span className='font-medium'>{review.reviewer}</span>
-                  <span className='text-sm text-muted-foreground'>
+                  <span className='text-sm '>
                     {new Date(review.date).toLocaleDateString()}
                   </span>
                 </div>
@@ -100,7 +100,7 @@ export function BrandProfile({ brand }: BrandProfileProps) {
                     </span>
                   ))}
                 </div>
-                <p className='text-sm text-muted-foreground'>{review.comment}</p>
+                <p className='text-sm '>{review.comment}</p>
               </Card>
             ))}
           </div>

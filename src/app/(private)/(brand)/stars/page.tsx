@@ -41,9 +41,10 @@ const StarsPage = () => {
           {/* Cards Grid */}
 
           <div className='grid grid-cols-1  gap-6 md:grid-cols-3 lg:grid-cols-4  mt-6'>
-            {Array.from({ length: 16 }, (_, index) => (
-              <InfluencerCard key={index} {...sampleInfluencers[0]} />
-            ))}
+           
+            {
+              sampleInfluencers.map(influencer=> <InfluencerCard key={influencer.id} {...influencer} />)
+            }
           </div>
 
           <div className='flex justify-center items-center my-10'>

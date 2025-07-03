@@ -4,7 +4,7 @@ import { POWCard } from '@/components/influencer'
 import {
   FAQSection,
   InfluencerActions,
-  
+
   ReviewCard
 } from '@/components/shared'
 import { Button } from '@/components/ui/button'
@@ -12,11 +12,11 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
 import { Card, CardContent, CardHeader, CardAction } from '@/components/ui/card'
 import { formatFollowers, formatPrice } from '@/utils'
 import { useCartStore } from '@/store/useCartStore'
-import { InfluencerProfile } from '@/types/profile'
+import { InfluencerProfileType } from '@/types/profile'
 import Image from 'next/image'
 
 interface InfluencerProfileProps {
-  influencer: InfluencerProfile
+  influencer: InfluencerProfileType
   isAuthenticated?: boolean
 }
 
@@ -26,7 +26,7 @@ export function InfluencerProfile ({
 }: InfluencerProfileProps) {
   return (
     <div className='space-y-10 md:space-y-14'>
-      <div className='flex flex-col md:flex-row gap-10 md:gap-14 items-center justify-between py-10'>
+      <div className='flex flex-col md:flex-row gap-10 md:gap-14 items-center justify-between py-5 md:py-10'>
         <div className='relative sm:w-[20rem] h-[20rem] rounded-md mb-5 aspect-square'>
           <Image
             src={influencer.photos[0]}
@@ -85,7 +85,7 @@ export function InfluencerProfile ({
         <div className='grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-8'>
           {influencer.packages.map(item => (
             <Card
-              className='w-full hover:shadow-lg transition-shadow duration-200 bg-[#2F353E] border-0'
+              className='w-full hover:shadow-lg transition-shadow duration-200 bg-[#2F353E] border-0 '
               key={item.id}
             >
               <CardHeader className='flex justify-between'>
@@ -128,7 +128,7 @@ export function InfluencerProfile ({
           Proof of Work (POW)
         </h3>
 
-        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-10'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-7'>
           {influencer.pows.map((pow, index) => (
             <POWCard key={index} pow={pow} />
           ))}

@@ -68,7 +68,7 @@ const CONTACT_LINKS = [
 ]
 const Footer = () => {
   return (
-    <footer className='text-white  px-5 md:px-10 lg:px-20 xl:px-36 flex flex-col md:flex-row space-y-3 md:gap-10 mt-12 md:justify-center md:items-center w-full'>
+    <footer className='text-white  px-5 md:px-10 lg:px-20 xl:px-36 flex flex-col md:flex-row space-y-3 md:gap-10 mt-12 /md:justify-center md:items-center w-full'>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 border-t border-neutral-white/20 py-10'>
         <div className='flex flex-col '>
           <Link href='/' className='relative w-32 h-8'>

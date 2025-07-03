@@ -20,8 +20,8 @@ export function Step2Title ({ onContinue, onBack }: Step2TitleProps) {
       return
     }
 
-    if (state.title.length > 100) {
-      setError('Title should be less than 100 characters')
+    if (state.title.length > 50) {
+      setError('Title should be less than 50 characters')
       return
     }
 
@@ -49,14 +49,14 @@ export function Step2Title ({ onContinue, onBack }: Step2TitleProps) {
               updateTitle(e.target.value)
               setError(null)
             }}
-            placeholder='e.g. Tech Enthusiast & Content Creator'
+            placeholder='e.g. Solana Maxi'
             className='bg-transparent border-[0.5px] border-[#CDCDCD]'
           />
           {error && <p className='text-red-500 text-sm'>{error}</p>}
         </div>
 
         <p className='text-sm text-gray-400'>
-          Characters: {state.title.length}/100
+          Characters: {state.title.length}/50
         </p>
       </div>
     </StepLayout>

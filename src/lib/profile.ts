@@ -3,7 +3,7 @@ import { INFLUENCER_DETAILS } from "@/constants/influencer-data"
 export const getProfileType = async (username: string): Promise<'brand' | 'influencer' | null> => {
   // TODO: Replace with actual API call to check user type
   // For now, return influencer if it matches INFLUENCER_DETAILS id, otherwise brand
-  if (INFLUENCER_DETAILS.id === username) {
+  if (INFLUENCER_DETAILS.username === username) {
     return 'influencer'
   }
   return 'brand'
@@ -57,7 +57,7 @@ export const getProfile = async (username: string): Promise<typeof INFLUENCER_DE
   }
 
   if (type === 'influencer') {
-    if (username === INFLUENCER_DETAILS.id) {
+    if (username === INFLUENCER_DETAILS.username) {
       return {
         ...INFLUENCER_DETAILS,
       }

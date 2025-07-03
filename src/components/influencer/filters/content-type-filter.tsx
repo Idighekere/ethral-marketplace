@@ -17,7 +17,8 @@ const CONTENT_TYPES = [
   { id: 'retweet', label: 'Retweet' },
   { id: 'reply', label: 'Reply' },
   { id: 'quote', label: 'Quote Tweet' },
-  { id: 'space', label: 'Space' }
+  { id: 'space', label: 'Space' },
+  { id: 'livestream', label: 'Live Stream' }
 ]
 
 interface ContentTypeFilterProps {

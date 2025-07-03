@@ -21,7 +21,10 @@ import {
   PriceFilter,
   GenderFilter,
   AuthRequiredDialog,
-  PremiumUpgradeDialog
+  PremiumUpgradeDialog,
+  AgeFilter,
+  BlockchainFilter,
+  NicheFilter
 } from './filters'
 
 interface SearchFormProps {
@@ -37,7 +40,7 @@ const InfluencerSearchForm = ({
   className = '',
   showFilters = false,
   isAuthenticated = false,
-  isPremium = false,
+  // isPremium = false,
   onLogin,
   onUpgrade
 }: SearchFormProps) => {
@@ -203,11 +206,11 @@ const InfluencerSearchForm = ({
       return
     }
 
-    const premiumFilters = ['age', 'blockchain', 'niche']
-    if (!isPremium && premiumFilters.includes(filterType)) {
-      setShowPremiumDialog(true)
-      return
-    }
+    // const premiumFilters = ['age', 'blockchain', 'niche']
+    // if (!isPremium && premiumFilters.includes(filterType)) {
+    //   setShowPremiumDialog(true)
+    //   return
+    // }
 
     if (filterType === 'clear') {
       clearAllFilters()
@@ -382,7 +385,7 @@ const InfluencerSearchForm = ({
           />
           <FilterButton
             label='Age'
-            isPremium={true}
+            // isPremium={true}
             isActive={
               searchState.filters.age.min > 18 ||
               searchState.filters.age.max < 65
@@ -391,13 +394,13 @@ const InfluencerSearchForm = ({
           />
           <FilterButton
             label='Blockchain'
-            isPremium={true}
+            // isPremium={true}
             isActive={searchState.filters.blockchain.length > 0}
             onClick={() => handleFilterClick('blockchain')}
           />
           <FilterButton
             label='Niche'
-            isPremium={true}
+            // isPremium={true}
             isActive={searchState.filters.niche.length > 0}
             onClick={() => handleFilterClick('niche')}
           />
@@ -406,7 +409,7 @@ const InfluencerSearchForm = ({
             <Button
               variant='ghost'
               onClick={() => handleFilterClick('clear')}
-              className='text-gray-600 hover:text-gray-800'
+              className='text-white/80 hover:text-white/90'
             >
               Clear All
             </Button>
@@ -433,6 +436,18 @@ const InfluencerSearchForm = ({
       />
       <GenderFilter
         isOpen={activeFilter === 'gender'}
+        onClose={closeActiveFilter}
+      />
+      <AgeFilter
+        isOpen={activeFilter === 'age'}
+        onClose={closeActiveFilter}
+      />
+      <BlockchainFilter
+        isOpen={activeFilter === 'blockchain'}
+        onClose={closeActiveFilter}
+      />
+      <NicheFilter
+        isOpen={activeFilter === 'niche'}
         onClose={closeActiveFilter}
       />
 

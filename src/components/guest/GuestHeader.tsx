@@ -27,7 +27,7 @@ const GuestHeader = () => {
   const pathname = usePathname()
   return (
     <header className='sticky top-0 left-0 right-0 z-50 bg-background '>
-      <nav className=' px-5 h-20 /flex items-center justify-between md:px-10 lg:px-20 xl:px-36 grid grid-cols-3 '>
+      <nav className=' px-5 h-20 /flex items-center justify-between md:px-10 lg:px-20 xl:px-36 grid md:grid-cols-3 grid-cols-2'>
         {/* Logo */}
         <Link href='/' className='relative w-32 h-8 flex items-center'>
           <Image
@@ -78,7 +78,7 @@ const GuestHeader = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className='md:hidden p-2'
+          className='flex justify-end md:hidden p-2'
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label='Toggle menu'
         >

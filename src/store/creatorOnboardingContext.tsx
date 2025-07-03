@@ -36,7 +36,7 @@ interface CreatorOnboardingContextType {
   updateGender: (gender: Gender) => void
   updateXHandle: (handle: string) => void
   updateFollowerRange: (range: FollowerRange) => void
-  toggleContentType: (type: ContentType) => void
+  toggleContentType: (type: string) => void
   updateProfileImage: (file: File | null) => void
   addContentImage: (file: File) => void
   removeContentImage: (index: number) => void
@@ -98,7 +98,7 @@ export function CreatorOnboardingProvider({ children }: { children: ReactNode })
     setState(prev => ({ ...prev, followerRange }))
   }
 
-  const toggleContentType = (type: ContentType) => {
+  const toggleContentType = (type: string) => {
     setState(prev => {
       if (prev.contentTypes.includes(type)) {
         return {

@@ -59,7 +59,7 @@ export const ProfileHeader = ({
 
   // Desktop header for authenticated users
   const DesktopAuthHeader = () => (
-    <div className='hidden md:flex items-center gap-4'>
+    <div className='hidden md:flex items-center gap-4 md:justify-end'>
       <Button variant='secondary' asChild className='rounded-full'>
         <Link href='/campaigns/new'>Post a campaign</Link>
       </Button>
@@ -93,7 +93,7 @@ export const ProfileHeader = ({
 
   return (
     <header className='sticky top-0 left-0 right-0 z-50 bg-background  text-white'>
-      <nav className='mx-auto px-5 h-20 /flex items-center justify-between sm:px-10 lg:px-20 xl:px-36:p-36 grid grid-cols-3'>
+      <nav className='mx-auto px-5 h-20 /flex items-center justify-between sm:px-10 lg:px-20 xl:px-36:p-36 grid grid-cols-2  md:grid-cols-3'>
         {/* Logo */}
         <Link href='/' className='flex justify-center relative w-32 h-8'>
           <Image

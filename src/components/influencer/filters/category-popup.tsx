@@ -4,32 +4,8 @@ import { useRef, useEffect } from 'react'
 import { cn } from '@/lib/utils'
 
 const POPULAR_CATEGORIES = [
-  'Lifestyle',
-  'Beauty',
-  'Fashion',
-  'Travel',
-  'Health & Fitness',
-  'Food & Drink',
-  'Family & Children',
-  'Comedy & Entertainment',
-  'Art & Photography',
-  'Music & Dance',
-  'Model',
-  'Animals & Pets',
-  'Adventure & Outdoors',
-  'Education',
-  'Entrepreneur & Business',
-  'Athlete & Sports',
-  'Gaming',
-  'Technology',
-  'LGBTQ+',
-  'Healthcare',
-  'Vegan',
-  'Automotive',
-  'Actor',
-  'Skilled Trades',
-  'Celebrity & Public Figure',
-  'Cannabis'
+
+ 'NFT Collector','Defi Educator','Degen Trader','DAO Advocate','DePIN Enthusiast','Airdrop Farmer','Wallet Security Expert','Web3 Educator','Market Analyst','DevTool Evangelist','Podcast Host','Solana Maxi','Eth Purist','Arbitrum Farmer'
 ]
 
 interface CategoryPopupProps {

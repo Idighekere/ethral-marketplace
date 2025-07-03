@@ -20,13 +20,15 @@ import { SAMPLE_BLOG } from '@/constants/blogs-data'
 export const metadata = generateMetadata(HOME_SEO)
 
 export default function HomePage () {
+
+  const FourInfluencers=sampleInfluencers.slice(0,4)
   return (
     <>
       <GuestHeader />
       <GuestHero />
       <div className='space-y-10'>
-        <FeaturedInfluencers influencers={sampleInfluencers} />
-        <FeaturedInfluencers influencers={sampleInfluencers} />
+        <FeaturedInfluencers influencers={FourInfluencers} />
+        <FeaturedInfluencers influencers={FourInfluencers} />
       </div>
 
       <FeaturesSection features={FEATURES_DATA} />

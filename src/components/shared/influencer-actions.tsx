@@ -80,7 +80,7 @@ export const InfluencerActions = ({
 
   if (variant === 'header') {
     return (
-      <div className={`flex items-center gap-1 ${className}`}>
+      <div className={`flex items-center justify-end gap-1 ${className}`}>
         {/* Share Dialog */}
         <Dialog open={isShareOpen} onOpenChange={setIsShareOpen}>
           <Button
@@ -208,7 +208,7 @@ export const InfluencerActions = ({
       )}
 
       <Button
-        className='flex items-center border-[0.4px] border-[#cdcdcd]/60 rounded-full h-11 gap-2 px-2 py-2'
+        className='flex items-center border-[0.4px] border-[#cdcdcd]/60 rounded-full h-11 gap-2 px-2 py-1'
         variant='outline'
         onClick={() => handleAddToCart()}
       >

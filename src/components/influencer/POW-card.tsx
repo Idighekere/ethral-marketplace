@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Play } from "../icons"
+// import { Play } from "../icons"
 
 interface Props {
   pow: string
@@ -7,7 +7,7 @@ interface Props {
 export const POWCard = ({ pow }: Props) => {
   return (
     <div className=''>
-      <div className='relative aspect-9/16  rounded-lg '>
+      <div className='relative aspect-16/9  rounded-lg '>
         {/* <iframe src={pow}/> */}
         <Image
           src={pow}
@@ -16,10 +16,10 @@ export const POWCard = ({ pow }: Props) => {
           className='
           rounded-lg shadow-lg object-cover'
         />
-
+{/*
         <button className='absolute bottom-4 left-4 z-40'>
           <Play />
-        </button>
+        </button> */}
       </div>
     </div>
   )

@@ -54,7 +54,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
   return (
     <Card
       className={cn(
-        'group relative overflow-hidden border-0  p-0 transition-all duration-300  hover:shadow-2xl cursor-pointer bg-background rounded-md space-y-0 gap-2 shadow-none',
+        'group relative overflow-hidden border-0  p-4 transition-all duration-300  hover:shadow-2xl cursor-pointer bg-[#1D232C] rounded-lg space-y-0 gap-2 shadow-none ',
         variantStyles.card,
         className
       )}
