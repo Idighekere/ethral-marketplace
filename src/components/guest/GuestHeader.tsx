@@ -148,7 +148,7 @@ const GuestHeader = () => {
               className='w-full justify-center font-[500] text-lg '
               asChild
             >
-              <Link href='/join/creator'>Join as Creator</Link>
+              <Link href='/login'>Login</Link>
             </Button>
           </div>
         </div>
