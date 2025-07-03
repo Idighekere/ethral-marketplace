@@ -82,6 +82,7 @@ export const InfluencerCard: React.FC<InfluencerCardProps> = ({
         className
       )}
       onClick={()=>router.push(`/${username}`)}
+      data-aos="fade-up" data-aos-anchor-placement="bottom-bottom"
     >
       <Link className="gap-2" href={`/${username}`}>
       <div className={cn('relative z-10  ',variantStyles.wrapper)}>
@@ -108,14 +109,14 @@ export const InfluencerCard: React.FC<InfluencerCardProps> = ({
         </div>
 
         <div className={cn(
-            'relative aspect-square rounded-md w-full',
+            'relative aspect-square  w-full group-hover:scale-102',
             variantStyles.imageWrapper
           )}>
           <Image
             src={image}
             alt={name}
             fill
-            className='rounded-md object-cover shadow-lg transition-transform duration-300 group-hover:scale-102'
+            className='rounded-md object-cover shadow-lg transition-transform duration-500 '
           />
         </div>
 

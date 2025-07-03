@@ -14,7 +14,7 @@ const MessagesPage = () => {
       <ChatSidebar />
 
       {/* Main content area for desktop */}
-      <div className='hidden md:flex flex-1 items-center justify-center'>
+      <div className='hidden md:flex flex-1 items-center justify-center w-full'>
         <div className='text-center'>
           <div className='bg-secondary rounded-full w-12 h-12 flex items-center justify-center'>
             <Message className='size-6 text-primary' />

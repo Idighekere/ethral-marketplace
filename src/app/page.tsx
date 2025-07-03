@@ -16,19 +16,20 @@ import { generateMetadata } from '@/lib/seo'
 import { HOME_SEO } from '@/lib/seo/pages'
 import { sampleFAQs } from '@/constants/faq-data'
 import { SAMPLE_BLOG } from '@/constants/blogs-data'
+import {AOSProvider} from '@/contexts';
 
 export const metadata = generateMetadata(HOME_SEO)
 
 export default function HomePage () {
 
-  const FourInfluencers=sampleInfluencers.slice(0,4)
   return (
-    <>
+    <AOSProvider>
+
       <GuestHeader />
       <GuestHero />
       <div className='space-y-10'>
-        <FeaturedInfluencers influencers={FourInfluencers} />
-        <FeaturedInfluencers influencers={FourInfluencers} />
+        <FeaturedInfluencers influencers={sampleInfluencers.slice(0,4)} />
+        <FeaturedInfluencers influencers={sampleInfluencers.slice(5,9)} />
       </div>
 
       <FeaturesSection features={FEATURES_DATA} />
@@ -56,6 +57,7 @@ export default function HomePage () {
 
       <FindAndHireInfluencersSection />
       <Footer />
-    </>
+    </AOSProvider
+>
   )
 }

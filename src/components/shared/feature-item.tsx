@@ -13,7 +13,7 @@ export function FeatureItem({ feature, index }: FeatureItemProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
       {/* Content */}
-      <div className={`space-y-6 ${isEven ? "lg:order-1" : "lg:order-2"}`}>
+      <div className={`space-y-6 ${isEven ? "lg:order-1" : "lg:order-2"}`} data-aos="fade-up" data-aos-anchor-placement="center-bottom">
       <p className="capitalize bg-[#1E242D] px-4 rounded-full py-1 w-30 flex justify-center ">{feature.id}</p>
         <div className="space-y-4">
           <h3 className="text-xl md:text-2xl text-white leading-tight font-semibold">{feature.title}</h3>
@@ -30,7 +30,7 @@ export function FeatureItem({ feature, index }: FeatureItemProps) {
       {/* Image */}
       <div className={`${isEven ? "md:order-2" : "md:order-1"}`}>
 
-            <div className="bg-[#1E242D] p-3 rounded-md overflow-hidden shadow-2xl w-full  relative rounded-2xl  ">
+            <div className="bg-[#1E242D] p-3 rounded-lg overflow-hidden shadow-2xl w-full  relative   " data-aos="fade-up" >
             <div className="relative w-full aspect-square  ">
               <Image
                 src={feature.image }

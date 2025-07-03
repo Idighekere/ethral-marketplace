@@ -24,7 +24,7 @@ export function FeaturesSection ({
           <h2 className='text-3xl md:text-4xl lg:text-4xl font-semibold mb-4'>
           How <span className="text-primary">Ethral</span> Marketplace Helps You Win
           </h2>
-          <p className='text-[#F3F4F6]  text-base  mx-auto leading-relaxed'>
+          <p className='text-[#F3F4F6]  text-base  mx-auto leading-relaxed max-w-3xl'>
             {subtitle}
           </p>
         </div>

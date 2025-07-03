@@ -23,7 +23,7 @@ export const BlogSection = ({ blogs, className }: Props) => {
 
       {/* Cards Grid */}
       <div className='overflow-x-auto pb-4 -mx-4 px-4 scrollbar'>
-        <div className='grid gap-6  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 '>
+        <div className='grid gap-6  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ' data-aos="fade-up" data-aos-anchor-placement="center-bottom">
           {blogs.map(blog => (
             <BlogCard key={blog.id} {...blog} variant="column"/>
           ))}

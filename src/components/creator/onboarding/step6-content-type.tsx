@@ -12,7 +12,7 @@ interface Step6ContentTypeProps {
 
 const contentTypeOptions: string[] = [
 
- 'NFT Collector','Defi Educator','Degen Trader','DAO Advocate','DePIN Enthusiast','Airdrop Farmer','Wallet Security Expert','Web3 Educator','Market Analyst','DevTool Evangelist','Podcast Host','Solana Maxi','Eth Purist','Arbitrum Farmer'
+ 'NFT Collector','Defi Educator','Degen Trader','DAO Advocate','DePIN Enthusiast','Airdrop Farmer','Wallet Security Expert','Web3 Educator','Market Analyst','DevTool Evangelist','Podcast Host','Solana Maxi','Eth Purist','Arbitrum Farmer','Gaming'
 ]
 
 export function Step6ContentType ({

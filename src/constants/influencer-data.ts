@@ -322,15 +322,13 @@ export const INFLUENCER_DETAILS={
       {
         "id":"1",
         "question":"What brands have you worked with?",
-        "answer":"Lorem"
+        "answer":"I've worked with several notable Web3 projects including Arbitrum, Optimism, Solana Foundation, Polygon, and various DeFi protocols like Uniswap and Aave. I've also collaborated with traditional tech companies entering the Web3 space such as Twitter/X and Meta."
       },
       {
-        "id":"1",
+        "id":"2",
         "question":"Who is your audience?",
-        "answer":"Lorem"
+        "answer":"My audience consists primarily of Web3 enthusiasts, developers, investors, and project founders. About 70% are between 25-40 years old with backgrounds in tech, finance, or entrepreneurship. They're highly engaged with cryptocurrency, DeFi, NFTs, and emerging blockchain technologies."
       }
     ],
     "relatedCategories":["Find Instagram Followers","Find UG Followers","Find Vegan Influencers","Top Influencers in USA","UGC"]
-
-
 }

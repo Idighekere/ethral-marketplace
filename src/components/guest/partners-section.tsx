@@ -18,6 +18,7 @@ export const PartnersSection = ({ partners }: Props) => {
             <div
               key={partner.name}
               className='flex items-center justify-center p-4'
+              data-aos="fade-up" data-aos-anchor-placement="center-bottom"
             >
               <div className='relative w-24 h-10 md:w-32 md:h-12'>
                 <Image
